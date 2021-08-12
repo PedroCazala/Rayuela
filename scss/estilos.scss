@@ -1,0 +1,141 @@
+
+//Variables
+    //colores
+    $color1: #F15BB5;
+    $color2: #B5F15B;
+    $color3: #5BB5F1;
+    $color4: #ffffff;
+    $color5: #000000;
+
+//mixins
+@mixin size ($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin max-size ($max-width, $max-height) {
+    max-width: $max-width;
+    max-height: $max-height;
+}
+
+//imports
+@import "header.scss";
+@import "footer.scss";
+@import "producto.scss";
+@import "catalogo.scss";
+@import "articulo.scss";
+@import "pages/index.scss";
+@import "pages/ofertas.scss";
+@import "pages/infoDelFooter.scss";
+@import "pages/carrito.scss";
+@import "pages/usuario";
+
+//extends
+.flexRowCentrado{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.flexColumnCentrado{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+
+/*------------------ General ---------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    width: 100%;
+    /*Flex*/
+    display: flex;
+    flex-flow: column;
+}
+h1{
+    background-color: $color1;
+    color: $color4;
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+h2{
+    background-color: $color5;
+    color: $color2;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+h3{
+    color: $color3;
+}
+nav{
+    ul{
+        color: $color1;
+    }
+}
+
+//BOTONES
+
+
+/*                        MEDIA QUERIS GENERALES                            */
+
+    /*Iré llenando a medida que necesite,
+    me parece optimo tener al final algunas especificaciones generales*/
+
+@media only screen and (max-width: 550px) {
+    h1{
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 1023px){
+    h1{
+        font-size: 3.5rem;
+    }
+}
+
+//Donde estoy parado
+.aquiEstoy{
+    color: $color2 !important;
+    border-bottom: 2px $color2 solid;
+}
+.tresLineasB{
+    width: 100px;
+    height: auto;
+}
+
+.error404{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    height: 100%;
+}
+
+.ideasCreativas{
+    width: 100%;
+    h2{
+        display: block;
+    }
+    article{
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        .prodVideo{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    }
+}

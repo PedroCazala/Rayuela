@@ -1,0 +1,85 @@
+.articulo{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-areas: 
+    "header header"
+    "fotos titulo"
+    "fotos datos"
+    "caracteristicas caracteristicas"
+    "similares similares"
+    "footer footer"
+    ;
+    header{
+        grid-area: header;
+    }
+    footer{
+        grid-area: footer;
+    }
+    &__fotos{
+        grid-area: fotos;
+        @include max-size(600px, 600px);
+        $colorProducto: red;//La idea es que el usuario elija el color y se cambie la imagen
+        @if $colorProducto == red{
+            background-color: red;
+            } 
+        @else if $colorProducto == blue{
+            background-color: blue;
+            }
+    }
+    &__titulo{
+        grid-area: titulo;
+    }
+    &__datos{
+        grid-area: datos;
+        padding: 20px;
+    }
+    &__caracteristicas{
+        grid-area: caracteristicas;
+    }
+    &__similares{
+        grid-area: similares;
+        div{
+            @extend .flexRowCentrado;
+        }
+    }
+    &__fotos, &__titulo, &__datos, &__caracteristicas, &__similares{
+        margin: 10px;
+        border: hotpink 2px solid;
+        //Lo que se incluyó en estas etiquetas es TEMPORAL
+    }
+}
+
+@for $i from 1 through 3 {
+    .cuotas-#{$i} { width: 90px * $i; }
+}
+.cuotas{
+    display: flex;
+    div{
+        border: solid 2px gold;
+        background-color: greenyellow;
+        margin: 10px;
+    }
+}
+
+$disponibilidad: (
+    agotado: red,
+    disponible: green,
+    ultimoDisponible: orange,
+);
+
+@each $dato, $valor in $disponibilidad{
+    .disponibilidad--#{$dato}{
+        background-color: $valor;
+    }
+}
+.disponibilidad{
+    color:white;
+    display: flex;
+    flex-flow: row wrap;
+    div{
+        margin:15px;
+        padding:3px 10px;
+        border-radius: 15px;
+    }
+}

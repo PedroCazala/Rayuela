@@ -1,0 +1,79 @@
+// PRODUCTOS
+.producto {
+    font-size: 2.5rem;
+    /*border: 3px rgb(117, 114, 114) solid;*/
+    width: 300px;
+    min-height: 420px;
+    margin: 25px;
+    padding: 15px;
+    input{
+        border:none;
+    }
+
+    /*Flex*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    form{
+        display: flex;
+        flex-flow: column wrap;
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+        z-index: 3;
+        font-size: 2.5rem;
+    }
+    img{
+    @include size(200px, 200px);
+    object-fit: cover;
+    }
+    img:hover{
+        transform: scale(1.4) translateY(-40px);
+        box-shadow: 5px 5px 15px  $color3;
+    }
+
+    input{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    &:hover{
+        background-color: $color1;
+        color:$color4;
+        border-radius: 15px;
+        box-shadow: 5px 5px 15px  grey;
+        .tituloProducto{
+            color:#3D172E;
+        }
+        h3{
+            background-color: $color1;
+        }
+    }
+}
+
+.cantidad{
+    color: $color3;
+    background-color: $color5;
+}
+
+.botonProducto{
+    text-decoration: none;
+    color: $color2;
+    background-color: $color5;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+
+    &:hover{
+        background-color: $color4;
+        color:$color1;
+    }
+    &:active{
+        background-color: $color1;
+        color: $color4;
+    }
+}

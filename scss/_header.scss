@@ -1,0 +1,205 @@
+/*----------------------- Header -------------------------*/
+header{
+    background-color: $color5;
+    width: 100%;
+    position:sticky;
+    top: 0px;
+    z-index: 10;
+}
+.logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    &Img{
+        @include max-size(200px,100%);
+    }
+}
+.logo:hover, .userCarro:hover,.logoRedSocial:hover{
+    transform: scale(1.1);
+}
+.buscador{
+    grid-area: buscador;
+
+    @include size (100%, auto);
+
+    font-size: 2.5rem;
+    margin: auto;
+    padding: 5px;
+    border-radius: 15px;
+}
+.navegacion{
+    grid-area: menu;
+    max-width: auto;
+    height: auto;
+}
+
+.contenedorUs{
+    grid-area: carritoUsuario;
+    max-width: auto;
+    height: auto;
+    @extend .flexRowCentrado;
+    .userCarro{
+        width: 80px;
+        height: auto;
+    }
+}
+.tresLineas{
+    grid-area: tresLineas;
+    display: flex;
+    height: auto;
+
+    img{
+        max-width: 100%;
+        max-height: 100%;
+        padding: 5px;
+        width: 80px;
+        height: auto;
+    }
+}
+
+
+#botonMenu{
+    display: none;
+}
+
+
+/*-------------- Barras de navegación ----------------*/
+nav a{
+    text-decoration: none;
+    color: $color1;
+    font-size: 2.5rem;
+}
+header ul,footer ul {
+    list-style-type: none;
+}
+.menu{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    li{
+        margin: 3px 20px;
+        position:relative;
+        background-color: $color5;
+        padding: auto;
+        li{
+            a{
+                padding: 0 10px;
+                display: flex;
+            }
+        }
+    }
+    
+    a:hover{
+        background-color: $color1;
+        color:$color4;
+        display: block;
+        border-radius: 10px;
+    }
+}
+
+.submenu{
+    position:absolute;
+    display:none;
+    background-color: $color5;
+    text-align: left;
+
+    li{
+        display: block;
+        z-index: 2;
+    }
+}
+
+
+ul li:hover ul{
+    display:block;
+}
+
+@media only screen and (max-width: 550px) {
+    header{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "logo logo carritoUsuario"
+        "tresLineas buscador buscador"
+        ;
+        justify-content: space-around;
+        align-content: center;
+    }
+    .navegacion{
+        display:none;
+    }
+
+    .user{
+        display: none;
+    }
+
+    .logo img{
+        width: 75%;
+        height: auto;
+    }
+
+    .contenedorUs img{
+        width: 75%;
+        height: auto;
+    }
+    .buscador{
+        font-size: 2rem;
+    }
+    .menu{
+        a{
+            text-decoration: none;
+            color: $color1;
+        }
+        
+    }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 1123px){
+    header{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "tresLineas logo buscador carritoUsuario"
+        ;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+    header label{
+        display: flex;
+    }
+    .tresLineas{
+        visibility: visible;
+        width: 100%;
+        height: auto;
+    }
+    .navegacion{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1124px){
+    header{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "logo buscador carritoUsuario"
+        "logo menu carritoUsuario"
+        ;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .tresLineas{
+        display: none;
+    }
+
+    .menu{
+        display: flex;
+        flex-flow:row wrap;
+    }
+}

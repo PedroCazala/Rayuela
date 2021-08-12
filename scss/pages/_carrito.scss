@@ -1,0 +1,12 @@
+/*--------------------- Carrito --------------------*/
+.carritoPag{
+    max-width: 90%;
+    margin: auto;
+    &__table img{
+        max-width: 270px;
+        height: 270px;
+        object-fit: contain;
+    }
+}
+
+

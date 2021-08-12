@@ -1,0 +1,155 @@
+/*------------------------ Contenido Info ---------------------------*/
+.contenidoInfo, .contenidoInfo div, .contenidoInfo main{
+    width: 80%;
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto;
+    background-color: #f7f7f8;
+    padding: 20px;
+    justify-content: center;
+
+    div{
+        align-items: center;
+    }
+
+    &__titulo1{
+        background-color: $color1;
+        color: $color4;
+        border-radius: 20px;
+        margin: auto;
+        margin-bottom:  20px;
+        padding: 9px 30px;
+    }
+    &__titulo1--Alternativo{
+        background-color: $color2;
+        color: $color5;
+        border: 7px $color1 solid;
+    }
+    
+    p{
+        text-indent: 4rem;
+    }
+
+    h2{
+        padding: 8px;
+        margin: 15px auto;
+        border: $color1 3px solid;
+        border-radius: 10px;
+        background-size: auto;
+    }
+    h3{
+        color:$color1
+    }
+}
+
+
+/*Como llegar*/
+.maps{
+    &__titulo2{
+        color: $color1;
+    }
+    &__iframe{
+        max-width:100%;
+    }
+}
+.comoLlegar main{
+    @extend .flexRowCentrado;
+    max-width: 100%;
+    align-items: center;
+}
+
+/*-------------------------- Contacto ---------------------------*/
+.formularioContacto{
+    max-width: 100%;
+    min-height: 700px;
+    margin: auto;
+    form{
+        margin: 50px;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: space-around;
+        align-items: center;
+        gap: 30px;
+    }
+    ul{
+        list-style-type: none;
+        /*Flex*/
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        gap: 30px;
+    }
+    li{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+}
+.formularioContacto h1, .crearCuenta h1{
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+}
+input, select, textarea{
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 4px;
+    border: 2px $color1 solid;
+    max-width: 100%;
+}
+
+.formularioContacto .boton, .boton{
+    text-decoration: none;
+    background-color: black;
+    color: $color2;
+    border: none;
+    font-size: 3rem;
+    padding: 8px 25px;
+}
+
+.boton:hover{
+    background-color: $color1;
+    color: $color4;
+}
+.boton:active{
+    background-color: $color4;
+    color: $color1;
+}
+@media only screen and (max-width: 550px) {
+    .formularioContacto li{
+        max-width: 100%;
+        display: flex;
+        flex-flow: column wrap; 
+    }
+}
+
+//Media queris
+
+@media only screen and (min-width: 1024px){
+    #quienesSomos{
+        height: 100%;
+        max-height: 100%;
+        display: flex;
+        flex-flow:column ;
+        position: absolute;
+        footer{
+            position: relative;
+            bottom: 0px;
+            width: auto;
+        }
+        .contenidoInfo{
+            
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            h1{
+                margin:5px auto 15px auto;
+            }
+        }
+    }
+}

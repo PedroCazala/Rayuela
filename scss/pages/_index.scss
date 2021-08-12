@@ -1,0 +1,134 @@
+/*-------------------------- INDEX --------------------------------*/
+/*-- Categorias --*/
+.categorias{
+    &__a{
+        text-decoration: none;
+        font-weight:bold;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .categorias{
+        font-size: 3rem;
+        display: flex;
+        flex-flow: column;
+        &__div{
+            color:$color4;
+            background-color: $color1;
+            margin: 10px auto;
+            width: 70%;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 1023px){
+    .categorias{
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(3, 300px);
+        justify-content: space-evenly;
+        align-content: space-around;
+        margin: 10px 0;
+        max-width: 100%;
+        max-height: 100%;
+        &__div{
+            color:$color4;
+            -webkit-text-stroke: 1px $color1;
+            margin: 10px auto;
+            text-align: center;
+            height: 90%;
+            border: 2px $color1 solid;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        &__div:hover{
+            box-shadow: 7px 7px 15px  grey;
+                transform: scale(1.02);
+        }
+    }
+    
+    #adhesivos{background-image:url(../images/categorias/adhesivos.jpg) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #tijeras  {background-image:url(../images/categorias/tijeras.jpg) ;  background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #mochilas {background-image:url(../images/categorias/mochilas.jpg) ; background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #pinturas {background-image:url(../images/categorias/pinturas.jpg) ; background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #cuadernos{background-image:url(../images/categorias/cuadernos.png) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #lapiceras{background-image:url(../images/categorias/lapiceras.jpg) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
+}
+
+@media only screen and (min-width: 1024px){
+    .categorias{
+        display: flex;
+        gap: 40px;
+        margin: auto;
+        max-width: 86%;
+        max-height: 100%;
+        overflow: auto;
+        &__div{
+            $ancho:350px;
+            color:$color4;
+            -webkit-text-stroke: 1px $color1;
+            margin: 10px auto;
+            text-align: center;
+            width: $ancho;
+            height: $ancho * 2 - 100px;
+            border: 2px $color1 solid;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        &__div:hover{
+            box-shadow: 7px 7px 15px  grey;
+            transform: scale(1.02);
+        }
+    }
+    #adhesivos{background-image:url(../images/categorias/adhesivos.jpg) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #tijeras  {background-image:url(../images/categorias/tijeras.jpg) ;  background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #mochilas {background-image:url(../images/categorias/mochilas.jpg) ; background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #pinturas {background-image:url(../images/categorias/pinturas.jpg) ; background-position: center; background-size: cover; background-repeat: no-repeat;}
+    #cuadernos{background-image:url(../images/categorias/cuadernos.png) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #lapiceras{background-image:url(../images/categorias/lapiceras.jpg) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
+}
+
+
+/*-- Destacados --*/
+.destacados{
+    width: 90%;
+    margin: auto;
+
+    &__titulo, &__contenido{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 15px;
+        font-size: 3rem;
+    }
+}
+/*-- Marcas --*/
+/*La idea es que no se use el scroll
+sino que se mueva solo tipo carrucel*/
+.marcas{
+    background-color: $color2;
+    height: 150px;
+    overflow: auto;
+    display: flex;
+    flex: row nowrap;
+    gap: 60px;
+    margin-bottom: 60px;
+    &__img{
+        width: 200px;
+        height: 90px;
+        object-fit: contain;
+        opacity: .6;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__img:hover{
+        opacity: 1.0;
+    }
+}
+

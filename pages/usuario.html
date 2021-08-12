@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | Rayuela</title>
+    <meta name="description" content="Crea tu usuario en Rayuela, para poder realizar tus compras.">
+    <meta name="keywords" content="inicio, inicia, iniciar, rayuela, cuenta, librería">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link type="image/x-icon" href="../images/1-R.png" rel="icon"/>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo"><img src="../images/Logo_3D_1920x1080p.png" alt="Logo" class="logoImg"></a>
+    
+        <input type="search" placeholder="¿Qué estas buscando?" class="buscador">
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="ofertas.html">Ofertas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Combos</a></li>
+                        <li><a href="#">Descuentos</a></li>
+                        <li><a href="#">2x1 o 3x1</a></li>
+                    </ul>
+                </li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="escolar.html">Escolar</a>
+                    <ul class="submenu">
+                        <li><a href="#">Blisters</a></li>
+                        <li><a href="#">Blocks</a></li>
+                        <li><a href="#">Carpetas</a></li>
+                        <li><a href="#">Correctores</a></li>
+                        <li><a href="#">Cuadernos</a></li>
+                        <li><a href="#">Fibras</a></li>
+                        <li><a href="#">Geometria</a></li>
+                        <li><a href="#">Gomas de borrar</a></li>
+                        <li><a href="#">Lapiceras</a></li>
+                        <li><a href="#">Lapices</a></li>
+                        <li><a href="#">Lapices de colores</a></li>
+                        <li><a href="#">Libretas</a></li>
+                        <li><a href="#">Mapas</a></li>
+                        <li><a href="#">Marcadores</a></li>
+                        <li><a href="#">Repuestos</a></li>
+                        <li><a href="#">Resaltadores</a></li>
+                        <li><a href="#">Tijeras</a></li>
+                    </ul>
+                </li>
+                <li><a href="artistica.html">Artística</a>
+                    <ul class="submenu">
+                        <li><a href="#">Carton</a></li>
+                        <li><a href="#">Crayones</a></li>
+                        <li><a href="#">Lapices de colores</a></li>
+                        <li><a href="#">Pinturas</a></li>
+                    </ul>
+                </li>
+                <li><a href="comercial.html">Comercial</a>
+                <ul class="submenu">
+                    <li><a href="#">Adhesivos</a></li>
+                    <li><a href="#">Blocks</a></li>
+                    <li><a href="#">Carpetas</a></li>
+                    <li><a href="#">Cintas</a></li>
+                    <li><a href="#">Corrector</a></li>
+                    <li><a href="#">Lapiceras</a></li>
+                    <li><a href="#">Resmas</a></li>
+                    <li><a href="#">Tecnología</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
+        <section class="contenedorUs">
+            <a href="../pages/usuario.html" class="user"><img src="../images/userBlanco.svg" alt="Usuario" class=userCarro></a>
+            <!--quizas hacer un html para FAVORITOS capaz seria bueno ponerle un menu desplegable-->
+            <a href="../pages/carrito.html" class="carrito"><img src="../images/carritoBlanco.svg" alt="Carrito" class=userCarro></a>
+        </section>
+        <div class="tresLineas"><img src="../images/menuBlanco.svg" alt="menu"></div>
+    </header>
+    
+    <main class="crearCuenta">
+        <h1>Crear una cuenta</h1>
+        <form action="" class="formularioUsuario">
+            <label for="nombreUsuario">Nombre</label>
+            <input type="text" id="nombreUsuario">
+            <label for="apellidoUsuario">Apellido</label>
+            <input type="text" id="apellidoUsuario">
+            <label for="emailUsuario">Email</label>
+            <input type="email" id="emailUsuario">
+            <label for="contraseñaUsuario">Contraseña</label>
+            <input type="password" id="contraseñaUsuario">
+            <label for="confirmarContraseñaUsuario">Confirmar contraseña</label>
+            <input type="password" id="confirmarContraseñaUsuario">
+            <button type="submit" class="boton">Crear cuenta</button>
+        </form>
+        <p>¿Ya tienes cuanta?</p>
+        <form action="">
+            <button class="boton">Iniciar seción</button>
+        </form>
+
+    </main>
+    <footer>
+        <div class="mailFooter">
+            <form>
+                <ul>
+                    <li>
+                        <label for="emailFooter">Recibí ofertas y promociones</label>
+                        <input type="email" id=emailFooter placeholder="Ingresa aquí tu email"/>
+                    </li>
+                    <li>
+                        <input type="submit" value="Suscribirme"class="botonForm">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="infoFooter">
+            <h2>Información</h2>
+            <nav>
+                <ul>
+                    <li><a href="quienesSomos.html">Quienes somos</a></li>
+                    <li><a href="formasDePago.html">Formas de pago</a></li>
+                    <li><a href="comoLlegar.html">Como llegar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class=divRedesSociales>
+            <h2>Sigamos conectados</h2>
+            <ul>
+                <!--Los siguientes serán imagenes, pero por ahora lo puse en texto para que se dirija a la página-->
+                <!-- <p>telegram</p> Todavia no tiene -->
+                <li><a href="https://www.facebook.com/Kiosco-y-librer%C3%ADa-Rayuela-255957498683723" target="_blank"><img src="../images/facebook.png" alt="Facebook" class="logoRedSocial"/></a></li>
+                <li><a href="https://www.instagram.com/rayuela_sag/" target="_blank"><img src="../images/instagram.png" alt="Instagram" class="logoRedSocial"/></a></li>
+                <li><a href="https://wa.me/message/SJG2ZPAF76GTC1" target="_blank" class="whatsapp"><img src="../images/whatsapp.png" alt="Whatsapp" class="logoRedSocial"/></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
