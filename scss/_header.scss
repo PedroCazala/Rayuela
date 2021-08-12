@@ -122,11 +122,12 @@ ul li:hover ul{
         display: grid;
         grid-template-rows: auto auto;
         grid-template-areas:
-        "logo logo carritoUsuario"
-        "tresLineas buscador buscador"
+        "tresLineas logo carritoUsuario"
+        "buscador buscador buscador"
         ;
         justify-content: space-around;
         align-content: center;
+        padding-bottom: 10px;
     }
     .navegacion{
         display:none;
@@ -142,8 +143,9 @@ ul li:hover ul{
     }
 
     .contenedorUs img{
-        width: 75%;
+        height: 75%;
         height: auto;
+        max-height: 90%;
     }
     .buscador{
         font-size: 2rem;
