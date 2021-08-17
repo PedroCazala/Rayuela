@@ -47,11 +47,14 @@ header {
   display: flex;
   height: auto; }
   .tresLineas img {
-    max-width: 100%;
+    max-width: 80px;
     max-height: 100%;
     padding: 5px;
     width: 80px;
     height: auto; }
+
+.ubicacionMenu {
+  grid-area: ubicacionMenu; }
 
 #botonMenu {
   display: none; }
@@ -99,7 +102,7 @@ ul li:hover ul {
   header {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-areas: "tresLineas logo carritoUsuario" "buscador buscador buscador";
+    grid-template-areas: "tresLineas logo carritoUsuario" "buscador buscador buscador" "ubicacionMenu ubicacionMenu ubicacionMenu";
     justify-content: space-around;
     align-content: center;
     padding-bottom: 10px; }
@@ -124,7 +127,7 @@ ul li:hover ul {
   header {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-areas: "tresLineas logo buscador carritoUsuario";
+    grid-template-areas: "tresLineas logo buscador carritoUsuario" "ubicacionMenu ubicacionMenu ubicacionMenu ubicacionMenu";
     justify-content: space-between;
     align-content: center;
     align-items: center; }
@@ -141,9 +144,14 @@ ul li:hover ul {
   header {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-areas: "logo buscador carritoUsuario" "logo menu carritoUsuario";
+    grid-template-areas: "logo buscador carritoUsuario" "logo menu carritoUsuario" "ubicacionMenu ubicacionMenu ubicacionMenu";
     justify-content: space-around;
     align-content: center; }
+  .ubicacionMenu {
+    display: flex; }
+  .menuOculto {
+    visibility: visible;
+    display: block; }
   .tresLineas {
     display: none; }
   .menu {

@@ -51,12 +51,15 @@ header{
     height: auto;
 
     img{
-        max-width: 100%;
+        max-width: 80px;
         max-height: 100%;
         padding: 5px;
         width: 80px;
         height: auto;
     }
+}
+.ubicacionMenu{
+    grid-area: ubicacionMenu;
 }
 
 
@@ -124,6 +127,7 @@ ul li:hover ul{
         grid-template-areas:
         "tresLineas logo carritoUsuario"
         "buscador buscador buscador"
+        "ubicacionMenu ubicacionMenu ubicacionMenu"
         ;
         justify-content: space-around;
         align-content: center;
@@ -165,6 +169,7 @@ ul li:hover ul{
         grid-template-rows: auto auto;
         grid-template-areas:
         "tresLineas logo buscador carritoUsuario"
+        "ubicacionMenu ubicacionMenu ubicacionMenu ubicacionMenu"
         ;
         justify-content: space-between;
         align-content: center;
@@ -191,9 +196,17 @@ ul li:hover ul{
         grid-template-areas:
         "logo buscador carritoUsuario"
         "logo menu carritoUsuario"
+        "ubicacionMenu ubicacionMenu ubicacionMenu"
         ;
         justify-content: space-around;
         align-content: center;
+    }
+    .ubicacionMenu{
+        display: flex;
+    }
+    .menuOculto{
+        visibility: visible;
+        display: block;
     }
 
     .tresLineas{
