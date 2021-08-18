@@ -96,54 +96,35 @@
         </header>
         <main class="carritoPag">
             <h1>Carrito</h1>
-            <table class="table carritoPag__table">
-                <thead>
-                <tr>
-                    <th scope="col">Foto del producto</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio Unitario</th>
-                    <th scope="col">Precio</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row"><img src="../images/productos/Cuadeno exito n°1 lunares.jpg" alt=""></th>
-                    <td>Cuadeno exito n°1 lunares rayado 48h</td>
-                    <td>1</td>
-                    <td>$precio</td>
-                    <td>$precio</td>
-                </tr>
-                <tr>
-                    <th scope="row"><img src="../images/productos/cuadernillo-avon.png" alt=""></th>
-                    <td>Cuadernillo Ledesma Avon 22x29 x84h</td>
-                    <td>2</td>
-                    <td>$precio</td>
-                    <td>$precio</td>
-                </tr>
-                <tr>
-                    <th scope="row"><img src="../images/productos/voligoma30.jpg" alt=""></th>
-                    <td>Voligoma 30g</td>
-                    <td>4</td>
-                    <td>$precio</td>
-                    <td>$precio</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Envio a...</td>
-                    <td>$precio</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Total</td>
-                    <td>$precio</td>
-                </tr>
-                </tbody>
-            </table>
+            <article>
+                <div class="article__foto"><img src="../images/productos/Cuadeno exito n°1 lunares.jpg" alt=""></div>
+                <div class="article__nombre">Cuadeno exito n°1 lunares rayado 48h</div>
+                <div class="article__cantidad"><p>Cantidad</p> 
+                    <input type="number" class="cantidad" min="1" max="100" value="1">
+                </div>
+                <div class="article__precioUnitario">$200</div>
+                <div class="article__precio">Total: $200</div>
+            </article>
+            <article>
+                <div class="article__foto"><img src="../images/productos/cuadernillo-avon.png" alt=""></div>
+                <div class="article__nombre">Cuadernillo Ledesma Avon 22x29 x84h</div>
+                <div class="article__cantidad"><p>Cantidad</p> 
+                    <input type="number" class="cantidad" min="1" max="100" value="2">
+                </div>
+                <div class="article__precioUnitario">$300</div>
+                <div class="article__precio">Total: $600</div>
+            </article>
+            <article>
+                <div class="article__foto"><img src="../images/productos/voligoma30.jpg" alt=""></div>
+                <div class="article__nombre">Voligoma 30g</div>
+                <div class="article__cantidad"><p>Cantidad</p> 
+                    <input type="number" class="cantidad" min="1" max="100" value="4">
+                </div>
+                <div class="article__precioUnitario">$150</div>
+                <div class="article__precio">Total: $600</div>
+            </article>
+            <p>Envio a... $precio</p>
+            <p>Total $precio</p>
         </main>
         <footer>
             <div class="mailFooter">
