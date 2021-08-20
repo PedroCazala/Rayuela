@@ -98,6 +98,9 @@ header ul, footer ul {
 ul li:hover ul {
   display: block; }
 
+header a:hover {
+  color: white; }
+
 @media only screen and (max-width: 550px) {
   header {
     display: grid;
@@ -800,6 +803,43 @@ input, select, textarea {
   width: 700px;
   max-width: 100%; }
 
+.ideasCreativas {
+  width: 100%; }
+  .ideasCreativas .content {
+    display: grid;
+    grid-template-columns: auto auto; }
+  @media only screen and (max-width: 800px) {
+    .ideasCreativas .content {
+      grid-template-columns: auto; } }
+  .ideasCreativas h2 {
+    display: block;
+    display: flex;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px; }
+  .ideasCreativas article {
+    max-width: 100%;
+    border: 5px #F15BB5 solid;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-flow: column wrap; }
+    .ideasCreativas article .prodVideo {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center; }
+    .ideasCreativas article iframe {
+      max-width: 100%;
+      max-height: auto;
+      width: 560px;
+      height: 315px; }
+    @media only screen and (max-width: 380px) {
+      .ideasCreativas article .producto {
+        margin: 0; } }
+
 .flexRowCentrado, .contenedorUs, .articulo__similares div, .comoLlegar main {
   display: flex;
   flex-flow: row wrap;
@@ -873,32 +913,6 @@ nav ul {
   text-align: center;
   font-size: 2rem;
   height: 100%; }
-
-.ideasCreativas {
-  width: 100%; }
-  .ideasCreativas .content {
-    display: grid;
-    grid-template-columns: auto auto; }
-  .ideasCreativas h2 {
-    display: block;
-    display: flex;
-    margin: auto;
-    padding: 5px;
-    border-radius: 10px; }
-  .ideasCreativas article {
-    width: 100%;
-    border: 5px #F15BB5 solid;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-flow: column wrap; }
-    .ideasCreativas article .prodVideo {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center; }
 
 .carritoPag article {
   border: 2px #F15BB5 solid;

@@ -1,0 +1,45 @@
+.ideasCreativas{
+    width: 100%;
+    .content{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    @media only screen and (max-width: 800px){
+        .content{
+            grid-template-columns: auto;
+        }
+    }
+    h2{
+        display: block;
+        display: flex;
+        margin:auto;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    article{
+        max-width: 100%;
+        border:5px $color1 solid;
+        border-radius: 15px;
+        padding: 10px;
+        margin:10px;
+        display: flex;
+        flex-flow: column wrap;
+        .prodVideo{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        iframe{
+            @include max-size(100%, auto)
+            width:560px;
+            height:315px;
+        }
+        @media only screen and (max-width: 380px){
+            .producto{
+                margin:0;
+            }
+        }
+    }
+}

@@ -119,6 +119,9 @@ header ul,footer ul {
 ul li:hover ul{
     display:block;
 }
+header a:hover{
+    color:white;
+}
 
 @media only screen and (max-width: 550px) {
     header{
@@ -132,7 +135,9 @@ ul li:hover ul{
         justify-content: space-around;
         align-content: center;
         padding-bottom: 10px;
+        
     }
+
     .navegacion{
         display:none;
     }

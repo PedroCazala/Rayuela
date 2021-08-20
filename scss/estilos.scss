@@ -23,11 +23,13 @@
 @import "producto.scss";
 @import "catalogo.scss";
 @import "articulo.scss";
+@import "carousel.scss";
 @import "pages/index.scss";
 @import "pages/ofertas.scss";
 @import "pages/infoDelFooter.scss";
 @import "pages/carrito.scss";
 @import "pages/usuario";
+@import "pages/ideasCreativas";
 
 //extends
 .flexRowCentrado{
@@ -121,37 +123,7 @@ nav{
     height: 100%;
 }
 
-.ideasCreativas{
-    width: 100%;
-    .content{
-        display: grid;
-        grid-template-columns: auto auto;
 
-    }
-    h2{
-        display: block;
-        display: flex;
-        margin:auto;
-        padding: 5px;
-        border-radius: 10px;
-    }
-    article{
-        width: 100%;
-        border:5px $color1 solid;
-        border-radius: 15px;
-        padding: 10px;
-        margin:10px;
-        display: flex;
-        flex-flow: column wrap;
-        .prodVideo{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-        }
-    }
-}
 .carritoPag{
     article{
         border: 2px $color1 solid;
