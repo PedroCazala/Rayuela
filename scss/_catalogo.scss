@@ -2,11 +2,11 @@
 .catalogo{
     display: grid;
     grid-template-rows: repeat(3, auto);
-    grid-template-columns: repeat(0.5fr auto auto);
+    grid-template-columns: 300px auto;
     grid-template-areas:
-    "header header header"
-    "barraLateral main main"
-    "footer footer footer"
+    "header header"
+    "barraLateral main"
+    "footer footer"
     ;
 
     header{grid-area: header;}
@@ -14,48 +14,7 @@
     footer{grid-area: footer;}
 }
 
-/* BARRA LATERAL */
-.barraLateral, .accordion-item, .accordion-button{
-    grid-area: barraLateral;
-    background-color: $color3;
-    color:$color4;
-    font-size: 2rem;
-}
-.accordion-button{
-    border-radius: 15px;
-}
-.accordion-button::after{
-    color:$color1;
-}
-.accordion-header{
-    background-color: $color1;
-}
 
-.barraLateral{
-    h2{
-        margin: 20px 20px 3px 20px;
-        padding: 5px;
-    }
-    ul{
-        list-style-type: none;
-        margin: 10px;
-    }
-    a{
-        text-decoration: none;
-        color: $color4;
-    }
-    a:hover{
-        color:$color1;
-        background-color: $color4;
-    }
-}
-#paginaActual{
-    border-radius: 8px;
-    padding:5px;
-    border: 2px $color1 solid;
-    background-color: $color4;
-    color: $color1;
-} 
 /* Contenido */
 .content{
     display: flex;

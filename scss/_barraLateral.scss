@@ -1,0 +1,116 @@
+//BARRA LATERAL
+.prueba{
+    max-width: 100%;
+    .content{
+        display: flex;
+        justify-content: center;
+    }
+}
+.btnMenu{
+    z-index: 4;
+    width: 3.5rem;
+    height: 40%;
+    background-color: $color5;
+    border-radius: 0.5rem;
+    position:fixed;
+    top: 30%;
+    left:5%;
+    color: white;
+    text-align:center;
+    transition: left 0.7s;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.checkbox:checked ~ .btnMenu{
+    left: 80%;
+    transition: left 0.4s;
+    transform: rotate(180deg);
+    border-radius: 0.5rem 0 0 0.5rem ;
+}
+.leftPanel{
+    background-color: $color5;
+    width: 80%;
+    min-height: 100%;
+    bottom: 0;
+    top:0;
+    position: fixed;
+    z-index: 11;
+    left: -80%;
+    transition: left .4s;
+    overflow: auto;
+}
+
+.checkbox:checked ~ .leftPanel{
+    left: 0;
+    transition: left .7s;
+}
+.checkbox{
+    display: none;
+}
+
+/* BARRA LATERAL */
+.barraLateral, .accordion-item, .accordion-button{
+    grid-area: barraLateral;
+    background-color: $color5;
+    color:$color5;
+    font-size: 2rem;
+}
+.accordion-button{
+    border-radius: 15px;
+}
+
+.accordion-header{
+    background-color: $color1;
+}
+
+.barraLateral{
+    h2{
+        margin: 20px 20px 3px 20px;
+        padding: 5px;
+    }
+    ul{
+        list-style-type: none;
+        margin: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: $color4;
+    }
+    a:hover{
+        color:$color1;
+        background-color: $color4;
+        padding: 5px;
+        border-radius: .5rem;
+    }
+    button{
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: $color1;
+    }
+}
+#paginaActual{
+    border-radius: 8px;
+    padding:5px;
+    border: 2px $color1 solid;
+    background-color: $color4;
+    color: $color1;
+} 
+
+
+.accordion-button:not(.collapsed) {
+    color: $color4;
+    background-color: $color1;
+    box-shadow: none;
+}
+.accordion-button:focus {
+    z-index: 3;
+    border-color: $color2;
+    outline: 0;
+    box-shadow: none;
+}
