@@ -95,89 +95,93 @@
             </div>
         </header>
         
-        <aside class="barraLateral"> <!--Esta es una barra lateral en donde aparecen las categorias y las subcategorias-->
-            <h2>Categorias</h2>
-            <div class="accordion accordion-flush"  id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Escolar
+        <input type="checkbox" class="checkbox" id="check">
+        <label class="btnBarraLateral" for="check"> <img src="../images/flechaBlanca.svg" alt="Flecha"> </label>
+        <aside class="leftPanel">
+            <div class="barraLateral"> <!--Esta es una barra lateral en donde aparecen las categorias y las subcategorias-->
+                <h2>Categorias</h2>
+                <div class="accordion accordion-flush"  id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Escolar
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><a href="escolar.html">Escolar</a>
+                                        <ul>
+                                            <li><a href="#">Adhesivos</a></li>
+                                            <li><a href="#">Blisters</a></li>
+                                            <li><a href="#">Blocks</a></li>
+                                            <li><a href="#">Carpetas</a></li>
+                                            <li><a href="#">Correctores</a></li>
+                                            <li><a href="#">Cuadernos</a></li>
+                                            <li><a href="#">Fibras</a></li>
+                                            <li><a href="#">Geometria</a></li>
+                                            <li><a href="#">Gomas de borrar</a></li>
+                                            <li><a href="#">Lapiceras</a></li>
+                                            <li><a href="#">Lapices</a></li>
+                                            <li><a href="#">Lapices de colores</a></li>
+                                            <li><a href="#">Libretas</a></li>
+                                            <li><a href="#">Mapas</a></li>
+                                            <li><a href="#">Marcadores</a></li>
+                                            <li><a href="#">Repuestos</a></li>
+                                            <li><a href="#">Resaltadores</a></li>
+                                            <li><a href="#">Tijeras</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Artística
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul>  
+                                <li><a href="artistica.html" class="aquiEstoy">Artística</a>
+                                        <ul>
+                                            <li><a href="#">Carton</a></li>
+                                            <li><a href="#">Crayones</a></li>
+                                            <li><a href="#">Lapices de colores</a></li>
+                                            <li><a href="#">Pinturas</a></li>
+                                        </ul>
+                                    </li>
+                            </ul>  
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Comercial
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <ul>
-                                <li><a href="escolar.html">Escolar</a>
+                                <li><a href="comercial.html">Comercial</a>
                                     <ul>
                                         <li><a href="#">Adhesivos</a></li>
-                                        <li><a href="#">Blisters</a></li>
                                         <li><a href="#">Blocks</a></li>
                                         <li><a href="#">Carpetas</a></li>
-                                        <li><a href="#">Correctores</a></li>
-                                        <li><a href="#">Cuadernos</a></li>
-                                        <li><a href="#">Fibras</a></li>
-                                        <li><a href="#">Geometria</a></li>
-                                        <li><a href="#">Gomas de borrar</a></li>
+                                        <li><a href="#">Cintas</a></li>
+                                        <li><a href="#">Corrector</a></li>
                                         <li><a href="#">Lapiceras</a></li>
-                                        <li><a href="#">Lapices</a></li>
-                                        <li><a href="#">Lapices de colores</a></li>
-                                        <li><a href="#">Libretas</a></li>
-                                        <li><a href="#">Mapas</a></li>
-                                        <li><a href="#">Marcadores</a></li>
-                                        <li><a href="#">Repuestos</a></li>
-                                        <li><a href="#">Resaltadores</a></li>
-                                        <li><a href="#">Tijeras</a></li>
+                                        <li><a href="#">Resmas</a></li>
+                                        <li><a href="#">Tecnología</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Artística
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <ul>  
-                            <li><a href="artistica.html" class="aquiEstoy">Artística</a>
-                                    <ul>
-                                        <li><a href="#">Carton</a></li>
-                                        <li><a href="#">Crayones</a></li>
-                                        <li><a href="#">Lapices de colores</a></li>
-                                        <li><a href="#">Pinturas</a></li>
-                                    </ul>
-                                </li>
-                        </ul>  
                     </div>
-                </div>
-                </div>
-                <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Comercial
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <ul>
-                            <li><a href="comercial.html">Comercial</a>
-                                <ul>
-                                    <li><a href="#">Adhesivos</a></li>
-                                    <li><a href="#">Blocks</a></li>
-                                    <li><a href="#">Carpetas</a></li>
-                                    <li><a href="#">Cintas</a></li>
-                                    <li><a href="#">Corrector</a></li>
-                                    <li><a href="#">Lapiceras</a></li>
-                                    <li><a href="#">Resmas</a></li>
-                                    <li><a href="#">Tecnología</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 </div>
             </div>
         </aside>

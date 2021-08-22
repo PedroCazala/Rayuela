@@ -9,4 +9,71 @@
     }
 }
 
+.carritoPag{
+    article{
+        border: 2px $color1 solid;
+        border-radius: 10px;
+    }
+}
+.carritoPag{
+    article{
+        display: grid;
+        grid-template-areas: 
+        "nombre nombre cantidad precioUnitario precio"
+        "foto foto cantidad precioUnitario precio"
+        ;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        margin: 10px;
+        img{
+            max-width: 270px;
+            max-height: 270px;
+            object-fit: contain;
+        }
+    }
+    p{
+        text-align: end;
+    }
+}
+.article__foto{
+    grid-area: foto;
+}
+.article__nombre{
+    grid-area: nombre;
+    color: $color1;
+}
+.article__cantidad{
+    grid-area: cantidad;
+}
+.article__precioUnitario{
+    grid-area: precioUnitario;
+}
+.article__precio{
+    grid-area: precio;
+}
+@media only screen and (max-width: 1023px){
+    .carritoPag{
+        article{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-areas: 
+            "nombre nombre cantidad"
+            "foto foto cantidad"
+            "foto foto precioUnitario"
+            "foto foto precio"
+            ;
+            img{
+                max-width: 160px;
+                max-height: 160px;
+            }
+        }
+        p{
+            margin-right: 40px;
+        }
+    }
+}
+
+
 
