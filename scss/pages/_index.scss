@@ -60,11 +60,12 @@
 @media only screen and (min-width: 1024px){
     .categorias{
         display: flex;
-        gap: 40px;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 60px;
         margin: auto;
         max-width: 86%;
         max-height: 100%;
-        overflow: auto;
         &__div{
             $ancho:350px;
             color:$color4;

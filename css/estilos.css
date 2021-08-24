@@ -724,11 +724,12 @@ footer {
 @media only screen and (min-width: 1024px) {
   .categorias {
     display: flex;
-    gap: 40px;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 60px;
     margin: auto;
     max-width: 86%;
-    max-height: 100%;
-    overflow: auto; }
+    max-height: 100%; }
     .categorias__div {
       color: #ffffff;
       -webkit-text-stroke: 1px #F15BB5;
