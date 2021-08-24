@@ -111,24 +111,5 @@
 /*-- Marcas --*/
 /*La idea es que no se use el scroll
 sino que se mueva solo tipo carrucel*/
-.marcas{
-    background-color: $color2;
-    height: 150px;
-    overflow: auto;
-    display: flex;
-    flex: row nowrap;
-    gap: 60px;
-    margin-bottom: 60px;
-    &__img{
-        width: 200px;
-        height: 90px;
-        object-fit: contain;
-        opacity: .6;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    &__img:hover{
-        opacity: 1.0;
-    }
-}
+
 

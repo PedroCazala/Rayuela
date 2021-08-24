@@ -1,0 +1,207 @@
+.marcasSeccion{
+    background-color: $color2;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    &__img{
+        width: 200px;
+        height: 90px;
+        object-fit: contain;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__img:hover{
+        opacity: 1.0;
+    }
+}
+.marcas{
+    max-width: 190px;
+    perspective: 1000px;
+    position: relative;
+    margin:auto;
+    &Carrusel{
+        width: 100%;
+        position: absolute;
+        animation: rotar 30s infinite linear;
+        transform-style: preserve-3d;
+        a{
+            width: auto;
+            max-height: 80px;
+            position:absolute;
+            img{
+                max-width:100%;
+                height:100%; 
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+.marcasCarrusel:hover{
+    animation-play-state:paused;
+    transition: all 300ms;
+}
+.marcasCarrusel img:hover{
+    transform: scale(1.2);
+    transition: all 300ms;
+}
+@media only screen and (max-width:480px){
+    .marcasSeccion{
+        padding-top: 40px;
+        padding-bottom:60px;
+    }
+    .marcas{
+        max-width: 90px;
+    }
+    $translateZ:(160px);
+    .marcasCarrusel a:nth-child(1){
+        transform:rotateY(0deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(2){
+        transform:rotateY(36deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(3){
+        transform:rotateY(72deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(4){
+        transform:rotateY(108deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(5){
+        transform:rotateY(144deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(6){
+        transform:rotateY(180deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(7){
+        transform:rotateY(216deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(8){
+        transform:rotateY(252deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(9){
+        transform:rotateY(288deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(10){
+        transform:rotateY(324deg) translateZ($translateZ);
+    }
+}
+@media only screen and (min-width:480px) and(max-width:750px){
+    .marcasSeccion{
+        padding-top: 40px;
+        padding-bottom:90px;
+    }
+    .marcas{
+        max-width: 150px;
+    }
+    $translateZ:(220px);
+    .marcasCarrusel a:nth-child(1){
+        transform:rotateY(0deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(2){
+        transform:rotateY(36deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(3){
+        transform:rotateY(72deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(4){
+        transform:rotateY(108deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(5){
+        transform:rotateY(144deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(6){
+        transform:rotateY(180deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(7){
+        transform:rotateY(216deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(8){
+        transform:rotateY(252deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(9){
+        transform:rotateY(288deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(10){
+        transform:rotateY(324deg) translateZ($translateZ);
+    }
+}
+
+@media only screen and (min-width: 750px) and (max-width:1300px){
+    .marcasSeccion{
+        padding-top: 40px;
+        padding-bottom:110px;
+    }
+    $translateZ:(300px);
+    .marcasCarrusel a:nth-child(1){
+        transform:rotateY(0deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(2){
+        transform:rotateY(36deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(3){
+        transform:rotateY(72deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(4){
+        transform:rotateY(108deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(5){
+        transform:rotateY(144deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(6){
+        transform:rotateY(180deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(7){
+        transform:rotateY(216deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(8){
+        transform:rotateY(252deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(9){
+        transform:rotateY(288deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(10){
+        transform:rotateY(324deg) translateZ($translateZ);
+    }
+}
+@media only screen and (min-width: 1300px){
+    .marcasSeccion{
+        padding-top: 40px;
+        padding-bottom:160px;
+    }
+    $translateZ:510px;
+    .marcasCarrusel a:nth-child(1){
+        transform:rotateY(0deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(2){
+        transform:rotateY(36deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(3){
+        transform:rotateY(72deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(4){
+        transform:rotateY(108deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(5){
+        transform:rotateY(144deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(6){
+        transform:rotateY(180deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(7){
+        transform:rotateY(216deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(8){
+        transform:rotateY(252deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(9){
+        transform:rotateY(288deg) translateZ($translateZ);
+    }
+    .marcasCarrusel a:nth-child(10){
+        transform:rotateY(324deg) translateZ($translateZ);
+    }
+}
+
+
+@keyframes rotar{
+    from{transform:rotateY(0deg)} to {transform:rotateY(360deg)};
+}
