@@ -4,6 +4,9 @@
         display: grid;
         grid-template-columns: auto auto;
     }
+    article{
+        margin:auto;
+    }
     @media only screen and (max-width: 800px){
         .content{
             grid-template-columns: auto;

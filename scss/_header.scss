@@ -80,7 +80,7 @@ header ul,footer ul {
 .menu{
     display:flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     li{
         margin: 3px 20px;
@@ -108,7 +108,8 @@ header ul,footer ul {
     display:none;
     background-color: $color5;
     text-align: left;
-
+    z-index: 12;
+    
     li{
         display: block;
         z-index: 2;

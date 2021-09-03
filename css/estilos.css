@@ -71,7 +71,7 @@ header ul, footer ul {
 .menu {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between; }
+  justify-content: space-around; }
   .menu li {
     margin: 3px 20px;
     position: relative;
@@ -90,7 +90,8 @@ header ul, footer ul {
   position: absolute;
   display: none;
   background-color: #000000;
-  text-align: left; }
+  text-align: left;
+  z-index: 12; }
   .submenu li {
     display: block;
     z-index: 2; }
@@ -246,7 +247,11 @@ footer {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  /*img:hover{
+        transform: scale(1.4) translateY(-40px);
+        box-shadow: 5px 5px 15px  $color3;
+    }*/ }
   .producto input {
     border: none; }
   .producto form {
@@ -261,9 +266,6 @@ footer {
     width: 200px;
     height: 200px;
     object-fit: cover; }
-  .producto img:hover {
-    transform: scale(1.4) translateY(-40px);
-    box-shadow: 5px 5px 15px #5BB5F1; }
   .producto input {
     font-size: 2.5rem;
     text-align: center; }
@@ -276,6 +278,16 @@ footer {
       color: #3D172E; }
     .producto:hover h3 {
       background-color: #F15BB5; }
+
+.producto:hover {
+  box-shadow: 5px 5px 15px #5BB5F1; }
+  .producto:hover img {
+    padding: 2px;
+    background-color: white; }
+
+@media only screen and (min-width: 950px) {
+  .producto:hover {
+    transform: scale(1.1); } }
 
 .cantidad {
   color: #5BB5F1;
@@ -357,55 +369,6 @@ footer {
     padding: 3px 10px;
     border-radius: 15px; }
 
-@media only screen and (max-width: 1023px) {
-  .btnBarraLateral {
-    z-index: 4;
-    width: 3.5rem;
-    height: 40%;
-    background-color: #000000;
-    border-radius: 0.5rem;
-    position: fixed;
-    top: 30%;
-    left: 5%;
-    color: white;
-    text-align: center;
-    transition: left 0.7s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px white solid; }
-    .btnBarraLateral img {
-      width: 100%;
-      height: auto; }
-  .checkbox:checked ~ .btnBarraLateral {
-    left: 80%;
-    transition: left 0.4s;
-    transform: rotate(180deg);
-    border-radius: 0.5rem 0 0 0.5rem;
-    border: 0; }
-  .leftPanel {
-    background-color: #000000;
-    width: 80%;
-    min-height: 100%;
-    bottom: 0;
-    top: 0;
-    position: fixed;
-    z-index: 11;
-    left: -80%;
-    transition: left .4s;
-    overflow: auto; }
-  .checkbox:checked ~ .leftPanel {
-    left: 0;
-    transition: left .7s; } }
-
-.checkbox {
-  display: none; }
-
-@media only screen and (min-width: 1023px) {
-  .btnBarraLateral img {
-    display: none; } }
-
-/* BARRA LATERAL */
 .barraLateral, .accordion-item, .accordion-button {
   grid-area: barraLateral;
   background-color: #000000;
@@ -460,6 +423,76 @@ footer {
   outline: 0;
   box-shadow: none; }
 
+.arriba {
+  display: flex;
+  justify-content: center;
+  max-width: 100%; }
+  .arriba a {
+    display: flex;
+    justify-content: center; }
+    .arriba a img {
+      text-align: center;
+      background-color: #ffffff;
+      position: fixed;
+      bottom: 20px;
+      width: 45px;
+      height: auto;
+      z-index: 6;
+      border-radius: 10px; }
+
+.arriba a:hover {
+  background-color: #000000; }
+
+@media only screen and (max-width: 1023px) {
+  .btnBarraLateral {
+    z-index: 4;
+    width: 3.5rem;
+    height: 40%;
+    background-color: #000000;
+    border-radius: 0.5rem;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    color: white;
+    text-align: center;
+    transition: left 0.7s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px white solid; }
+    .btnBarraLateral img {
+      width: 100%;
+      height: auto; }
+  .checkbox:checked ~ .btnBarraLateral {
+    left: 80%;
+    transition: left 0.4s;
+    transform: rotate(180deg);
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: 0; }
+  .leftPanel {
+    background-color: #000000;
+    width: 80%;
+    min-height: 100%;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    z-index: 11;
+    left: -80%;
+    transition: left .4s;
+    overflow: auto; }
+  .checkbox:checked ~ .leftPanel {
+    left: 0;
+    transition: left .7s; }
+  .arriba {
+    display: none; } }
+
+.checkbox {
+  display: none; }
+
+@media only screen and (min-width: 1023px) {
+  .btnBarraLateral img {
+    display: none; } }
+
 /*---------------- CATALOGO -------------------*/
 @media only screen and (min-width: 1023px) {
   .catalogo {
@@ -477,20 +510,6 @@ footer {
       grid-area: barraLateral;
       background-color: #000000; } }
 
-/*.catalogo{
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: 300px auto;
-    grid-template-areas:
-    "header header"
-    "barraLateral main"
-    "footer footer"
-    ;
-    aside{grid-area: barraLateral;}
-    header{grid-area: header;}
-    main{grid-area: main;}
-    footer{grid-area: footer;}
-}*/
 /* Contenido */
 .content {
   display: flex;
@@ -664,7 +683,9 @@ footer {
       background-color: #F15BB5;
       margin: 10px auto;
       width: 70%;
-      text-align: center; } }
+      text-align: center; }
+  .carousel-indicators {
+    transform: translateY(10px); } }
 
 @media only screen and (min-width: 551px) and (max-width: 1023px) {
   .categorias {
@@ -748,12 +769,12 @@ footer {
   #adhesivos {
     background-image: url(../images/categorias/adhesivos.jpg);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat; }
   #tijeras {
     background-image: url(../images/categorias/tijeras.jpg);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat; }
   #mochilas {
     background-image: url(../images/categorias/mochilas.jpg);
@@ -1071,6 +1092,8 @@ input, select, textarea {
   .ideasCreativas .content {
     display: grid;
     grid-template-columns: auto auto; }
+  .ideasCreativas article {
+    margin: auto; }
   @media only screen and (max-width: 800px) {
     .ideasCreativas .content {
       grid-template-columns: auto; } }
@@ -1143,7 +1166,9 @@ h2 {
   color: #B5F15B;
   text-align: center;
   font-size: 3rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 10px; }
 
 h3 {
   color: #5BB5F1; }
@@ -1163,8 +1188,7 @@ nav ul {
     font-size: 3.5rem; } }
 
 .aquiEstoy {
-  color: #B5F15B !important;
-  border-bottom: 2px #B5F15B solid; }
+  color: #B5F15B !important; }
 
 .aquiEstoy:hover {
   border: none; }

@@ -19,6 +19,9 @@
             text-align: center;
         }
     }
+    .carousel-indicators{
+        transform: translateY(10px);
+    }
 }
 
 @media only screen and (min-width: 551px) and (max-width: 1023px){
@@ -85,8 +88,8 @@
             transform: scale(1.02);
         }
     }
-    #adhesivos{background-image:url(../images/categorias/adhesivos.jpg) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
-    #tijeras  {background-image:url(../images/categorias/tijeras.jpg) ;  background-position: center; background-size: contain; background-repeat: no-repeat;}
+    #adhesivos{background-image:url(../images/categorias/adhesivos.jpg) ;background-position: center; background-size: cover; background-repeat: no-repeat;}
+    #tijeras  {background-image:url(../images/categorias/tijeras.jpg) ;  background-position: center; background-size: cover; background-repeat: no-repeat;}
     #mochilas {background-image:url(../images/categorias/mochilas.jpg) ; background-position: center; background-size: contain; background-repeat: no-repeat;}
     #pinturas {background-image:url(../images/categorias/pinturas.jpg) ; background-position: center; background-size: cover; background-repeat: no-repeat;}
     #cuadernos{background-image:url(../images/categorias/cuadernos.png) ;background-position: center; background-size: contain; background-repeat: no-repeat;}
