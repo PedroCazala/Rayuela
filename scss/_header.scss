@@ -81,7 +81,6 @@ header ul,footer ul {
     display:flex;
     flex-flow: row wrap;
     justify-content: space-around;
-
     li{
         margin: 3px 20px;
         position:relative;
@@ -165,7 +164,11 @@ header a:hover{
             text-decoration: none;
             color: $color1;
         }
-        
+    }
+    .menuOculto{
+        nav{
+            text-align: center;
+        }
     }
 }
 
@@ -191,6 +194,14 @@ header a:hover{
     }
     .navegacion{
         display: none;
+    }
+    .menuOculto{
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 17px;
+        }
     }
 
 }
