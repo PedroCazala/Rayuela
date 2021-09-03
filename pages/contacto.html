@@ -97,23 +97,15 @@
     <section class="formularioContacto">
         <h1>Contacto</h1>
         <form method="GET">
-                <li>
+                <div class="primeraParte">
                     <lebel for="nombre">Nombre*</lebel>
                     <input type="text" id="nombre" placeholder="Introduce aquí tu nombre..." required/>
-                </li>
-                <li>
                     <lebel for="apellido">Apellido*</lebel>
                     <input type="text" id="apellido" placeholder="Introduce aquí tu apellido..." required/>
-                </li>
-                <li>
                     <lebel for="email">Email*</lebel>
                     <input type="email" id="email" placeholder="Introduce aquí tu email..." required/>
-                </li>
-                <li>
                     <lebel for="telefono">Telefono</lebel>
                     <input type="tel" id="telefono" placeholder="Introduce aquí tu Telefono.."/>
-                </li>
-                <li>
                     <lebel for="desplegable">Motivo por el cual te contactas</lebel>
                     <select name="desplegable">
                         <option disabled selected>--Elije una opción--</option>
@@ -122,18 +114,20 @@
                         <option value="3">Tengo una sugerencia</option>
                         <option value="4">Otro motivo</option>
                     </select>
-                </li>
-                <li>
-                    <textarea rows="4" cols="30" placeholder="Aquí puedes dejarnos tus comentarios..."></textarea>
-                </li>
-                <li>
-                    <lebel for="acepta">Desea recibir el Newsletter</lebel>
-                    <input type="checkbox" name="acepta" value="1"/>
-                </li>
-                <li>
-                    <input type="submit" value="Enviar" class="boton"/>
-                    <input type="reset" value="Limpiar" class="boton"/>
-                </li>
+                </div>
+                <ul>
+                    <li>
+                        <textarea rows="4" cols="30" placeholder="Aquí puedes dejarnos tus comentarios..."></textarea>
+                    </li>
+                    <li>
+                        <lebel for="acepta">Desea recibir el Newsletter</lebel>
+                        <input type="checkbox" name="acepta" value="1" id="checkbox"/>
+                    </li>
+                    <li>
+                        <input type="submit" value="Enviar" class="boton"/>
+                        <input type="reset" value="Limpiar" class="boton"/>
+                    </li>
+                </ul>
         </form>
     </section>
     

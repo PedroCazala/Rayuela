@@ -898,7 +898,7 @@ sino que se mueva solo tipo carrucel*/
     height: auto; } }
 
 /*------------------------ Contenido Info ---------------------------*/
-.contenidoInfo, .contenidoInfo div, .contenidoInfo main {
+.contenidoInfo {
   width: 80%;
   display: flex;
   flex-flow: column wrap;
@@ -906,28 +906,31 @@ sino que se mueva solo tipo carrucel*/
   background-color: #f7f7f8;
   padding: 20px;
   justify-content: center; }
-  .contenidoInfo div, .contenidoInfo div div, .contenidoInfo main div {
-    align-items: center; }
-  .contenidoInfo__titulo1, .contenidoInfo div__titulo1, .contenidoInfo main__titulo1 {
+  .contenidoInfo div {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center; }
+  .contenidoInfo__titulo1 {
     background-color: #F15BB5;
     color: #ffffff;
     border-radius: 20px;
     margin: auto;
     margin-bottom: 20px;
     padding: 9px 30px; }
-  .contenidoInfo__titulo1--Alternativo, .contenidoInfo div__titulo1--Alternativo, .contenidoInfo main__titulo1--Alternativo {
+  .contenidoInfo__titulo1--Alternativo {
     background-color: #B5F15B;
     color: #000000;
     border: 7px #F15BB5 solid; }
-  .contenidoInfo p, .contenidoInfo div p, .contenidoInfo main p {
+  .contenidoInfo p {
     text-indent: 4rem; }
-  .contenidoInfo h2, .contenidoInfo div h2, .contenidoInfo main h2 {
+  .contenidoInfo h2 {
     padding: 8px;
     margin: 15px auto;
     border: #F15BB5 3px solid;
     border-radius: 10px;
     background-size: auto; }
-  .contenidoInfo h3, .contenidoInfo div h3, .contenidoInfo main h3 {
+  .contenidoInfo h3 {
     color: #F15BB5; }
 
 /*Como llegar*/
@@ -956,6 +959,10 @@ sino que se mueva solo tipo carrucel*/
     align-content: space-around;
     align-items: center;
     gap: 30px; }
+  .formularioContacto .primeraParte {
+    align-items: center; }
+    .formularioContacto .primeraParte input, .formularioContacto .primeraParte select {
+      width: 100%; }
   .formularioContacto ul {
     list-style-type: none;
     /*Flex*/
@@ -963,11 +970,28 @@ sino que se mueva solo tipo carrucel*/
     display: flex;
     flex-flow: column wrap;
     gap: 30px; }
-  .formularioContacto li {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 40px; }
+    .formularioContacto ul li {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px; }
+    .formularioContacto ul #checkbox {
+      width: 2rem;
+      height: 2rem;
+      margin: auto; }
+
+@media only screen and (max-width: 550px) {
+  form .primeraParte {
+    display: grid;
+    grid-template-columns: 1fr; } }
+
+@media only screen and (min-width: 550px) {
+  form .primeraParte {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    justify-items: end; } }
 
 .formularioContacto h1, .crearCuenta h1 {
   border-radius: 15px;
@@ -979,7 +1003,8 @@ input, select, textarea {
   border-radius: 10px;
   padding: 4px;
   border: 2px #F15BB5 solid;
-  max-width: 100%; }
+  width: 100%;
+  margin: auto; }
 
 .formularioContacto .boton, .boton {
   text-decoration: none;
@@ -1082,11 +1107,14 @@ input, select, textarea {
 .crearCuenta, .crearCuenta form {
   width: 80%;
   margin: auto;
-  font-size: 3rem; }
+  font-size: 3rem;
+  align-items: center; }
+  .crearCuenta label, .crearCuenta form label {
+    text-align: center; }
 
 .crearCuenta input, .crearCuenta button {
   margin: auto;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   padding: 8px;
   border-radius: 15px; }
 

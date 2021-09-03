@@ -1,5 +1,5 @@
 /*------------------------ Contenido Info ---------------------------*/
-.contenidoInfo, .contenidoInfo div, .contenidoInfo main{
+.contenidoInfo{
     width: 80%;
     display: flex;
     flex-flow: column wrap;
@@ -10,6 +10,9 @@
 
     div{
         align-items: center;
+        display: flex;
+        flex-flow:column;
+        justify-content: center;
     }
 
     &__titulo1{
@@ -59,6 +62,8 @@
 }
 
 /*-------------------------- Contacto ---------------------------*/
+
+
 .formularioContacto{
     max-width: 100%;
     min-height: 700px;
@@ -74,6 +79,12 @@
         align-items: center;
         gap: 30px;
     }
+    .primeraParte{
+        align-items: center;
+        input, select{
+            width: 100%;
+        }
+    }
     ul{
         list-style-type: none;
         /*Flex*/
@@ -81,12 +92,38 @@
         display: flex;
         flex-flow: column wrap;
         gap: 30px;
+
+        li{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        #checkbox{
+            width: 2rem;
+            height: 2rem;
+            margin: auto;
+        }
     }
-    li{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
+}
+
+@media only screen and (max-width: 550px) {
+    form{
+        .primeraParte{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media only screen and (min-width: 550px) {
+    form{
+        .primeraParte{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+            justify-items: end;
+        }
     }
 }
 .formularioContacto h1, .crearCuenta h1{
@@ -99,7 +136,8 @@ input, select, textarea{
     border-radius: 10px;
     padding: 4px;
     border: 2px $color1 solid;
-    max-width: 100%;
+    width: 100%;
+    margin: auto;
 }
 
 .formularioContacto .boton, .boton{
