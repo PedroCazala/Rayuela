@@ -56,7 +56,7 @@
     }
 }
 .comoLlegar main{
-    @extend .flexRowCentrado;
+    @extend .flexColumnCentrado;
     max-width: 100%;
     align-items: center;
 }

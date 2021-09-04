@@ -1161,13 +1161,13 @@ input, select, textarea {
       .ideasCreativas article .producto {
         margin: 0; } }
 
-.flexRowCentrado, .contenedorUs, .articulo__similares div, .comoLlegar main {
+.flexRowCentrado, .contenedorUs, .articulo__similares div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: center; }
 
-.flexColumnCentrado, .infoFooter, .crearCuenta, .crearCuenta form {
+.flexColumnCentrado, .infoFooter, .comoLlegar main, .crearCuenta, .crearCuenta form {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
