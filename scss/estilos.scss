@@ -16,6 +16,22 @@
     max-height: $max-height;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    width: 100%;
+    /*Flex*/
+    display: flex;
+    flex-flow: column;
+}
+
 //imports
 @import "header.scss";
 @import "footer.scss";
@@ -47,21 +63,6 @@
 
 
 /*------------------ General ---------------------*/
-*{
-    margin: 0;
-    padding: 0;
-}
-html{
-    font-size: 62.5%;
-}
-body{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    width: 100%;
-    /*Flex*/
-    display: flex;
-    flex-flow: column;
-}
 h1{
     background-color: $color1;
     color: $color4;

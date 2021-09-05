@@ -1,4 +1,19 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  width: 100%;
+  /*Flex*/
+  display: flex;
+  flex-flow: column; }
+
 /*----------------------- Header -------------------------*/
 header {
   background-color: #000000;
@@ -1174,21 +1189,6 @@ input, select, textarea {
   align-content: center; }
 
 /*------------------ General ---------------------*/
-* {
-  margin: 0;
-  padding: 0; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  width: 100%;
-  /*Flex*/
-  display: flex;
-  flex-flow: column; }
-
 h1 {
   background-color: #F15BB5;
   color: #ffffff;
