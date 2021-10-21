@@ -12,6 +12,7 @@ class Productos{
     }
 }
 
+
 //   .:PRODUCTOS INGRESADOS:.
 const plasticola40g = new Productos ("Plasticola 40g", 98, 5, "adhesivos", false, false);
 const voligoma30g = new Productos ("Voligoma 30g", 100, 7, "adhesivos", false, false);
@@ -20,9 +21,39 @@ const lapizbicevolutionnegro = new Productos ("Lapiz bic evolution negro", 30, 1
 const lapicerabictrazofino = new Productos ("Lapicera bic trazo fino", 67, 30, "lapicesras", ['azul', 'negro','rojo', 'verde'], false);
 const lapicerabictrazogrueso = new Productos("Lapicera bic trazo grueso",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false);
 
-//alert('En las siguientes entradas, se te solicitara dos ingresos de productos para comprar, para ello debes usar los siguientes códigos plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso')
-let producto1 = prompt('Introduce el primero de tres productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
-let producto2 = prompt('Introduce el segundo de tres productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
+const productos=[];
+productos.push(plasticola40g);
+productos.push(voligoma30g);
+productos.push(tijeramapedessentials13cm);
+productos.push(lapizbicevolutionnegro);
+productos.push(lapicerabictrazofino);
+productos.push(lapicerabictrazogrueso);
+console.log(productos);
+let cantidadProductos = productos.length;
+console.log('Cantidad de productos disponibles: ' + cantidadProductos);
+
+productos.sort((a, b) => {
+    if(a.precio > b.precio){
+        return 1;
+    }else if(a.precio < b.precio){
+        return -1;
+    }else{
+        return 0;
+    }
+});
+console.log(productos);
+console.log('A continuación se muestran los productos, ordenados de menor precio a mayor:');
+    for(const producto of productos){
+        console.log(producto.nombre + ' Precio: $' + producto.precio);
+    }
+
+//   .:Carrito:.
+//      >>>>QUEDA COMENTADO PARA QUE NO MOLESTE AL INGRESAR<<<<
+
+/*
+alert('En las siguientes entradas, se te solicitara dos ingresos de productos para comprar, para ello debes usar los siguientes códigos plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso')
+let producto1 = prompt('Introduce el primero de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
+let producto2 = prompt('Introduce el segundo de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
 
 if(producto1 == "plasticola40g"){producto1 = Object.assign({},plasticola40g);}
 if(producto1 == "voligoma30g"){producto1 = Object.assign({},voligoma30g);}
@@ -43,3 +74,4 @@ console.log('El segundo producto que compraste es: ' + producto2.nombre + ', el 
 
 console.log('El total a pagar, sin descuentos incluidos es de: ' + (producto1.precio+producto2.precio));
 
+*/
