@@ -48,9 +48,7 @@ console.log('A continuación se muestran los productos, ordenados de menor preci
     }
 
 //   .:Carrito:.
-//      >>>>QUEDA COMENTADO PARA QUE NO MOLESTE AL INGRESAR<<<<
 
-/*
 alert('En las siguientes entradas, se te solicitara dos ingresos de productos para comprar, para ello debes usar los siguientes códigos plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso')
 let producto1 = prompt('Introduce el primero de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
 let producto2 = prompt('Introduce el segundo de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
@@ -73,5 +71,3 @@ console.log('El primer producto que compraste es: ' + producto1.nombre + ', el p
 console.log('El segundo producto que compraste es: ' + producto2.nombre + ', el precio es de: $' + producto2.precio);
 
 console.log('El total a pagar, sin descuentos incluidos es de: ' + (producto1.precio+producto2.precio));
-
-*/
