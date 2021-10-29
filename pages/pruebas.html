@@ -13,10 +13,10 @@
         <header>
             <a href="../index.html" class="logo"><img src="../images/Logo_3D_1920x1080p.png" alt="Logo" class="logoImg"></a>
             
-            <input type="search" placeholder="¿Qué estas buscando?" class="buscador">
+            <input type="search" placeholder="¿Qué estas buscando?" class="buscador" id="buscador">
             <nav class="navegacion">
                 <ul class="menu">
-                    <li><a href="ofertas.html" class="aquiEstoy">Ofertas</a>
+                    <li><a href="ofertas.html">Ofertas</a>
                         <ul class="submenu">
                             <li><a href="#">Combos</a></li>
                             <li><a href="#">Descuentos</a></li>
@@ -88,23 +88,13 @@
         </header>
         <div class="ordenar">
             <label for="orden">Ordenar por:</label>
-            <select name="orden" id="orden">
+            <select id="orden">
                 <option value="az">A a la Z</option>
                 <option value="menor$">Menor precio</option>
                 <option value="mayor$">Mayor precio</option>
             </select>
         </div>
         <div id="contenedorProductos" class="content">
-            <!-- <div class="producto">
-                <img id="imgProducto" src="../images/productos/plasticola40.jpg" alt="Plasticola 40g">
-                <h3 class="tituloProducto">Titulo</h3>
-                <p id='precioProducto'>$precio</p>
-                <p id='cantidadProducto'>Cantidad</p>
-                <form action="">
-                    <input type="number" class="cantidad" min="1" max="100" value="1">
-                    <input type="submit" value="Agregar" class="botonProducto">
-                </form>
-            </div> -->
         </div>
 
     </div>

@@ -32,7 +32,7 @@ productos.push(lapicerabictrazogrueso);
 
 console.log(productos);
 let cantidadProductos = productos.length;
-console.log('Cantidad de productos disponibles: ' + cantidadProductos);
+console.log('Cantidad de tipos de productos disponibles: ' + cantidadProductos);
 
 //funciones para ordenar
 function ordenDeMenor(){
@@ -58,24 +58,65 @@ function ordenAlfabeticamente(){
 }
 
 ordenAlfabeticamente();
-console.log(productos);
-console.log('A continuación se muestran los productos, ordenados alfabeticamente:');
+//Crear catalogo basandonos en el array 'productos'
+function mostrarProductos(){
     for(const producto of productos){
-        console.log(producto.nombre + ' Precio: $' + producto.precio);
+        let contenedor = document.createElement('div');
+        contenedor.innerHTML =
+        `<div class="producto">
+            <img id="imgProducto" src="${producto.img}" alt="${producto.nombre}">
+            <h3 class="tituloProducto">${producto.nombre}</h3>
+            <p id='precioProducto'>$${producto.precio}</p>
+            <p>Cantidad</p>
+            <form action="">
+                <input type="number" class="cantidad" min="1" max="100" value="1">
+                <input type="submit" value="Agregar" class="botonProducto">
+            </form>
+        </div>
+        `
+        document.getElementById('contenedorProductos').appendChild(contenedor);
     }
-ordenDeMenor();
-console.log(productos);
-console.log('A continuación se muestran los productos, de menor a mayor precio:');
-    for(const producto of productos){
-        console.log(producto.nombre + ' Precio: $' + producto.precio);
+}
+mostrarProductos();
+
+//Ocultar Productos
+function ocultarProductos(){
+    let contenedor = document.getElementById('contenedorProductos');
+    //let contenido = document.getElementsByTagName('p');
+    while (contenedor.firstChild){
+        contenedor.removeChild(contenedor.firstChild);
     }
-ordenDeMayor();
-console.log(productos);
-console.log('A continuación se muestran los productos, de mayor a menor precio:');
-    for(const producto of productos){
-        console.log(producto.nombre + ' Precio: $' + producto.precio);
+}
+
+//Ordenar de acuerdo al selector
+let orden = document.getElementById('orden');
+function ordenarProductos(){
+    let eligio = orden.value;
+
+    if(eligio == 'az'){
+        ocultarProductos();
+        ordenAlfabeticamente();
+        mostrarProductos();
+    }else if (eligio == 'menor$'){
+        ocultarProductos();
+        ordenDeMenor();
+        mostrarProductos();
+    }else if (eligio == 'mayor$'){
+        ocultarProductos();
+        ordenDeMayor();
+        mostrarProductos();
     }
+
+}
+orden.addEventListener("change", ordenarProductos);
+
+//Filtrar
+let buscador = document.getElementById('buscador');
+
+
+
 //   .:Carrito:.
+const carrito = [];
 /*
 Comento para que no moleste
 alert('En las siguientes entradas, se te solicitara dos ingresos de productos para comprar, para ello debes usar los siguientes códigos plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso')
@@ -101,24 +142,3 @@ console.log('El segundo producto que compraste es: ' + producto2.nombre + ', el 
 
 console.log('El total a pagar, sin descuentos incluidos es de: ' + (producto1.precio+producto2.precio));
 */
-
-//Crear catalogo basandonos en el array 'productos'
-function mostrarProductos(){
-    for(const producto of productos){
-        let contenedor = document.createElement('div');
-        contenedor.innerHTML =
-        `<div class="producto">
-            <img id="imgProducto" src="${producto.img}" alt="${producto.nombre}">
-            <h3 class="tituloProducto">${producto.nombre}</h3>
-            <p id='precioProducto'>$${producto.precio}</p>
-            <p>Cantidad</p>
-            <form action="">
-                <input type="number" class="cantidad" min="1" max="100" value="1">
-                <input type="submit" value="Agregar" class="botonProducto">
-            </form>
-        </div>
-        `
-        document.getElementById('contenedorProductos').appendChild(contenedor);
-    }
-}
-mostrarProductos();
