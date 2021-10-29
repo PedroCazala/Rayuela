@@ -27,3 +27,27 @@
     flex-flow: row wrap;
     justify-content: center;
 }
+
+//Boton ordenar
+.ordenar{
+    display: flex;
+    flex-flow:column nowrap;
+    align-items: flex-end;
+    label{
+        margin-right: 10px;
+    }
+    select{
+        width: auto;
+        margin-right: 10px;
+        background-color: $color1;
+        color: $color4;
+        option{
+            text-align: center;
+            &:hover{
+                background-color: $color4;
+                color: $color1;
+            }
+        }
+        
+    }
+}

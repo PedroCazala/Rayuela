@@ -288,6 +288,8 @@ footer {
     width: 200px;
     height: 200px;
     object-fit: cover; }
+  .producto .tituloProducto {
+    min-height: 5rem; }
   .producto input {
     font-size: 2.5rem;
     text-align: center; }
@@ -537,6 +539,23 @@ footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
+
+.ordenar {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end; }
+  .ordenar label {
+    margin-right: 10px; }
+  .ordenar select {
+    width: auto;
+    margin-right: 10px;
+    background-color: #F15BB5;
+    color: #ffffff; }
+    .ordenar select option {
+      text-align: center; }
+      .ordenar select option:hover {
+        background-color: #ffffff;
+        color: #F15BB5; }
 
 .marcasSeccion {
   background-color: #B5F15B;
@@ -1248,3 +1267,17 @@ aside .aquiEstoy:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; }
+
+.catalogo {
+  min-height: 100%; }
+
+/*
+.footer{
+    width: 100%;
+    bottom: 0;
+    position: relative;
+}
+.body{
+    position:absolute;
+    width: 100%;
+}*/

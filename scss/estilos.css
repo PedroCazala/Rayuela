@@ -1,0 +1,223 @@
+@charset "UTF-8";
+.flexRowCentrado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.flexColumnCentrado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+/*------------------ General ---------------------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  width: 100%;
+  /*Flex*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+h1 {
+  background-color: #F15BB5;
+  color: #ffffff;
+  text-align: center;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  background-color: #000000;
+  color: #B5F15B;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: #5BB5F1;
+}
+
+nav ul {
+  color: #F15BB5;
+}
+
+/*                        MEDIA QUERIS GENERALES                            */
+/*Iré llenando a medida que necesite,
+    me parece optimo tener al final algunas especificaciones generales*/
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 1023px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.aquiEstoy {
+  color: #B5F15B !important;
+  border-bottom: 2px #B5F15B solid;
+}
+
+.tresLineasB {
+  width: 100px;
+  height: auto;
+}
+
+.error404 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  height: 100%;
+}
+
+.carritoPag article {
+  border: 2px #F15BB5 solid;
+  border-radius: 10px;
+}
+
+.carritoPag article {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "nombre nombre cantidad precioUnitario precio" "foto foto cantidad precioUnitario precio";
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+
+.carritoPag article img {
+  max-width: 270px;
+  max-height: 270px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.carritoPag p {
+  text-align: end;
+}
+
+.article__foto {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: foto;
+}
+
+.article__nombre {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nombre;
+  color: #F15BB5;
+}
+
+.article__cantidad {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: cantidad;
+}
+
+.article__precioUnitario {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: precioUnitario;
+}
+
+.article__precio {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  grid-area: precio;
+}
+
+@media only screen and (max-width: 1023px) {
+  .carritoPag article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        grid-template-areas: "nombre nombre cantidad" "foto foto cantidad" "foto foto precioUnitario" "foto foto precio";
+  }
+  .carritoPag article img {
+    max-width: 160px;
+    max-height: 160px;
+  }
+  .carritoPag p {
+    margin-right: 40px;
+  }
+}
+
+/*.prueba{
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "aside contenido"
+    "footer footer"
+    ;
+    header{
+        grid-area: header;
+    }
+    aside{
+        grid-area: aside;
+    }
+    .contenido{
+        grid-area: contenido;
+    }
+    footer{
+        grid-area: footer;
+    }
+}*/
+.btnMenu {
+  z-index: 2;
+  width: 3rem;
+  height: 40%;
+  background-color: red;
+  border-radius: 0.5rem;
+}
+/*# sourceMappingURL=estilos.css.map */

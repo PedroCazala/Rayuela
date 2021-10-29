@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../css/estilos.css">
     <title>Ventana de Prueba</title>
 </head>
-<body >
-    <div class=prueba>
+<body>
+    <div class="prueba body">
         <header>
             <a href="../index.html" class="logo"><img src="../images/Logo_3D_1920x1080p.png" alt="Logo" class="logoImg"></a>
             
@@ -86,24 +86,31 @@
                 </nav>
             </div>
         </header>
-        <section class="marcasSeccion"><!-- Aquí las marcas -->
-            <div class="marcas">
-                <div class="marcasCarrusel">
-                    <a href="#"><img src="../images/marcas/logoFilgo.svg" class="marcas__img" alt="Filgo"></a>
-                    <a href="#"><img src="../images/marcas/logoBic.png" class="marcas__img" alt="Bic"></a>
-                    <a href="#"><img src="../images/marcas/logoFaber.png" class="marcas__img" alt="Faber Castell"></a>
-                    <a href="#"><img src="../images/marcas/logoVoligoma.png" class="marcas__img" alt="Voligoma"></a>
-                    <a href="#"><img src="../images/marcas/logoPlasticola.png" class="marcas__img" alt="Plasticola"></a>
-                    <a href="#"><img src="../images/marcas/logoMaped.png" class="marcas__img" alt="Maped"></a>
-                    <a href="#"><img src="../images/marcas/logoEqArte.png" class="marcas__img" alt="Eq arte"></a>
-                    <a href="#"><img src="../images/marcas/logoExito.png" class="marcas__img" alt="Éxito"></a>
-                    <a href="#"><img src="../images/marcas/logoMooving.png" class="marcas__img" alt="Mooving"></a>
-                    <a href="#"><img src="../images/marcas/logoSharpie.png" class="marcas__img" alt="Sharpie"></a>
-                </div>
-            </div>
-        </section>
+        <div class="ordenar">
+            <label for="orden">Ordenar por:</label>
+            <select name="orden" id="orden">
+                <option value="az">A a la Z</option>
+                <option value="menor$">Menor precio</option>
+                <option value="mayor$">Mayor precio</option>
+            </select>
+        </div>
+        <div id="contenedorProductos" class="content">
+            <!-- <div class="producto">
+                <img id="imgProducto" src="../images/productos/plasticola40.jpg" alt="Plasticola 40g">
+                <h3 class="tituloProducto">Titulo</h3>
+                <p id='precioProducto'>$precio</p>
+                <p id='cantidadProducto'>Cantidad</p>
+                <form action="">
+                    <input type="number" class="cantidad" min="1" max="100" value="1">
+                    <input type="submit" value="Agregar" class="botonProducto">
+                </form>
+            </div> -->
+        </div>
+
     </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="../js/productos.js"></script>
     </body>
     </html>
     
