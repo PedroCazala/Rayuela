@@ -56,6 +56,20 @@ header {
   .contenedorUs .userCarro {
     width: 80px;
     height: auto; }
+  .contenedorUs .cantidadCarrito {
+    position: absolute;
+    color: #ffffff;
+    background-color: #F15BB5;
+    z-index: 200;
+    border-radius: 100%;
+    padding: 5px;
+    font-size: 1.5rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    text-align: center;
+    margin-left: -3rem; }
+  .contenedorUs a {
+    text-decoration: none; }
 
 .tresLineas {
   grid-area: tresLineas;
@@ -279,7 +293,8 @@ footer {
   .producto form {
     display: flex;
     flex-flow: column wrap;
-    text-align: center; }
+    text-align: center;
+    margin: 0 57px; }
   .producto h3 {
     text-align: center;
     z-index: 3;
@@ -321,10 +336,14 @@ footer {
   text-decoration: none;
   color: #B5F15B;
   background-color: #000000;
-  padding: 5px;
-  margin: 10px;
+  padding: 5px 25px;
+  margin-top: 10px;
   border-radius: 15px;
-  border: none; }
+  cursor: pointer;
+  outline: none; }
+  .botonProducto :focus {
+    outline-color: transparent;
+    outline-style: none; }
   .botonProducto:hover {
     background-color: #ffffff;
     color: #F15BB5; }

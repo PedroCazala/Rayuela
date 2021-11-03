@@ -1,5 +1,6 @@
 class Productos{
-    constructor(nombre, precio, stock, categoria, colores, descuento,img){
+    constructor(id, nombre, precio, stock, categoria, colores, descuento,img){
+        this.id =id;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
@@ -15,12 +16,12 @@ class Productos{
 
 
 //   .:PRODUCTOS INGRESADOS:.
-const plasticola40g = new Productos ("Plasticola 40g", 98, 5, "adhesivos", false, false,'../images/productos/plasticola40.jpg');
-const voligoma30g = new Productos ("Voligoma 30g", 100, 7, "adhesivos", false, false,'../images/productos/voligoma30.jpg');
-const tijeramapedessentials13cm = new Productos ("Tijera maped essentials 13cm", 130, 4, "tijeras", false, 10,'../images/productos/tijera maped essentials 13cm.jpg');
-const lapizbicevolutionnegro = new Productos ("Lapiz bic evolution negro", 30, 10, "lapices", false, 25,'../images/productos/lapiz-negro-bic-evolution.jpg');
-const lapicerabictrazofino = new Productos ("Lapicera bic trazo fino", 67, 30, "lapicesras", ['azul', 'negro','rojo', 'verde'], false,'../images/productos/lapicera-bic-trazo-fino.jpg');
-const lapicerabictrazogrueso = new Productos("Lapicera bic trazo grueso",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'../images/productos/lapicera-bic-trazo-grueso.jpg');
+const plasticola40g = new Productos (1,"Plasticola 40g", 98, 5, "adhesivos", false, false,'../images/productos/plasticola40.jpg');
+const voligoma30g = new Productos (2,"Voligoma 30g", 100, 7, "adhesivos", false, false,'../images/productos/voligoma30.jpg');
+const tijeramapedessentials13cm = new Productos (3,"Tijera maped essentials 13cm", 130, 4, "tijeras", false, 10,'../images/productos/tijera maped essentials 13cm.jpg');
+const lapizbicevolutionnegro = new Productos (4,"Lapiz bic evolution negro", 30, 10, "lapices", false, 25,'../images/productos/lapiz-negro-bic-evolution.jpg');
+const lapicerabictrazofino = new Productos (5,"Lapicera bic trazo fino", 67, 30, "lapicesras", ['azul', 'negro','rojo', 'verde'], false,'../images/productos/lapicera-bic-trazo-fino.jpg');
+const lapicerabictrazogrueso = new Productos(6,"Lapicera bic trazo grueso",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'../images/productos/lapicera-bic-trazo-grueso.jpg');
 //Array productos
 const productos=[];
 productos.push(plasticola40g);
@@ -63,18 +64,19 @@ function mostrarProductos(){
     for(const producto of productos){
         let contenedor = document.createElement('div');
         contenedor.innerHTML =
-        `<div class="producto">
+        `<div class="producto" id='${producto.id}'>
             <img id="imgProducto" src="${producto.img}" alt="${producto.nombre}">
             <h3 class="tituloProducto">${producto.nombre}</h3>
-            <p id='precioProducto'>$${producto.precio}</p>
+            <p id='precioProducto'><b>$${producto.precio}</b></p>
             <p>Cantidad</p>
             <form action="">
-                <input type="number" class="cantidad" min="1" max="100" value="1">
-                <input type="submit" value="Agregar" class="botonProducto">
+                <input type="number" class="cantidad" id='num_${producto.id}' min="1" max="100" value="1">
+                <buttom class="botonProducto"  id='btn_${producto.id}' onclick=cantidadDeProductosEnCarrito()>Agregar</buttom>
             </form>
         </div>
         `
         document.getElementById('contenedorProductos').appendChild(contenedor);
+        //let hola = cantidadAComprar(producto.id);
     }
 }
 mostrarProductos();
@@ -111,11 +113,30 @@ function ordenarProductos(){
 orden.addEventListener("change", ordenarProductos);
 
 //Filtrar
-let buscador = document.getElementById('buscador');
+const filtrar = () =>{
+    let buscador = document.getElementById('buscador');
+    buscador.onkeyup = () =>{console.log(buscador.value);}
+}
+
 
 
 
 //   .:Carrito:.
+// agregar al array carrito los productos en los que se oprime agregar
+//capturar cual es el producto al que se le oprime agregar
+const cantidadAComprar = (id) =>{
+    let cantidad = document.getElementById(`num_${id}`).value;
+    return cantidad;
+}
+//console.log(cantidadAComprar(6));
+const cantidadDeProductosEnCarrito = (/*inputNumero*/) => {
+    elemento = document.getElementById('cantidadProductos');
+    let cantidadCarro = parseInt(elemento.innerHTML);
+    cantidadCarro = cantidadCarro + 1 /*inputNumero*/;
+    elemento.innerHTML = cantidadCarro;
+}
+//agregar productos al carrito
+
 const carrito = [];
 /*
 Comento para que no moleste

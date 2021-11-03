@@ -20,6 +20,7 @@
         display: flex;
         flex-flow: column wrap;
         text-align: center;
+        margin: 0 57px;
     }
     h3{
         text-align: center;
@@ -78,11 +79,17 @@
     text-decoration: none;
     color: $color2;
     background-color: $color5;
-    padding: 5px;
-    margin: 10px;
+    padding: 5px 25px;
+    margin-top: 10px;
     border-radius: 15px;
-    border: none;
+    cursor:pointer;
 
+    //sacarle lo azul
+    outline: none;
+    :focus { 
+        outline-color: transparent; 
+        outline-style: none;
+    }
     &:hover{
         background-color: $color4;
         color:$color1;

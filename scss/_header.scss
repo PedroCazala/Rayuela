@@ -44,6 +44,22 @@ header{
         width: 80px;
         height: auto;
     }
+    .cantidadCarrito{
+        position:absolute;
+        color: $color4;
+        background-color:$color1;
+        z-index:200;
+        border-radius: 100%;
+        padding: 5px;
+        font-size: 1.5rem;
+        min-width: 3rem;
+        min-height: 3rem;
+        text-align:center;
+        margin-left: -3rem;
+    }
+    a{
+        text-decoration: none;
+    }
 }
 .tresLineas{
     grid-area: tresLineas;
@@ -235,3 +251,4 @@ header a:hover{
         flex-flow:row wrap;
     }
 }
+
