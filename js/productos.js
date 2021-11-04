@@ -16,12 +16,12 @@ class Productos{
 
 
 //   .:PRODUCTOS INGRESADOS:.
-const plasticola40g = new Productos (1,"Plasticola 40g", 98, 5, "adhesivos", false, false,'../images/productos/plasticola40.jpg');
-const voligoma30g = new Productos (2,"Voligoma 30g", 100, 7, "adhesivos", false, false,'../images/productos/voligoma30.jpg');
-const tijeramapedessentials13cm = new Productos (3,"Tijera maped essentials 13cm", 130, 4, "tijeras", false, 10,'../images/productos/tijera maped essentials 13cm.jpg');
-const lapizbicevolutionnegro = new Productos (4,"Lapiz bic evolution negro", 30, 10, "lapices", false, 25,'../images/productos/lapiz-negro-bic-evolution.jpg');
-const lapicerabictrazofino = new Productos (5,"Lapicera bic trazo fino", 67, 30, "lapicesras", ['azul', 'negro','rojo', 'verde'], false,'../images/productos/lapicera-bic-trazo-fino.jpg');
-const lapicerabictrazogrueso = new Productos(6,"Lapicera bic trazo grueso",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'../images/productos/lapicera-bic-trazo-grueso.jpg');
+const plasticola40g = new Productos (1,"Plasticola 40g", 98, 5, "adhesivos", false, false,'plasticola40.jpg');
+const voligoma30g = new Productos (2,"Voligoma 30g", 100, 7, "adhesivos", false, false,'voligoma30.jpg');
+const tijeramapedessentials13cm = new Productos (3,"Tijera maped essentials 13cm", 130, 4, "tijeras", false, 10,'tijera maped essentials 13cm.jpg');
+const lapizbicevolutionnegro = new Productos (4,"Lapiz bic evolution negro", 30, 10, "lapices", false, 25,'lapiz-negro-bic-evolution.jpg');
+const lapicerabictrazofino = new Productos (5,"Lapicera bic trazo fino", 67, 30, "lapicesras", ['azul', 'negro','rojo', 'verde'], false,'lapicera-bic-trazo-fino.jpg');
+const lapicerabictrazogrueso = new Productos(6,"Lapicera bic trazo grueso",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
 //Array productos
 const productos=[];
 productos.push(plasticola40g);
@@ -31,9 +31,8 @@ productos.push(lapizbicevolutionnegro);
 productos.push(lapicerabictrazofino);
 productos.push(lapicerabictrazogrueso);
 
-console.log(productos);
-let cantidadProductos = productos.length;
-console.log('Cantidad de tipos de productos disponibles: ' + cantidadProductos);
+let variedadProductos = productos.length;
+console.log('variedad de productos disponibles: ' + variedadProductos);
 
 //funciones para ordenar
 function ordenDeMenor(){
@@ -62,32 +61,26 @@ ordenAlfabeticamente();
 //Crear catalogo basandonos en el array 'productos'
 function mostrarProductos(){
     for(const producto of productos){
-        let contenedor = document.createElement('div');
-        contenedor.innerHTML =
+        let contenedor = 
         `<div class="producto" id='${producto.id}'>
-            <img id="imgProducto" src="${producto.img}" alt="${producto.nombre}">
+            <img id="imgProducto" src="../images/productos/${producto.img}" alt="${producto.nombre}">
             <h3 class="tituloProducto">${producto.nombre}</h3>
             <p id='precioProducto'><b>$${producto.precio}</b></p>
             <p>Cantidad</p>
             <form action="">
                 <input type="number" class="cantidad" id='num_${producto.id}' min="1" max="100" value="1">
-                <buttom class="botonProducto"  id='btn_${producto.id}' onclick=cantidadDeProductosEnCarrito()>Agregar</buttom>
+                <buttom class="botonProducto"  id='btn_${producto.id}' onclick=agregarProductoAlCarrito(${producto.id})>Agregar</buttom>
             </form>
         </div>
         `
-        document.getElementById('contenedorProductos').appendChild(contenedor);
-        //let hola = cantidadAComprar(producto.id);
+        $('#contenedorProductos').append(contenedor);
     }
 }
 mostrarProductos();
-
 //Ocultar Productos
 function ocultarProductos(){
     let contenedor = document.getElementById('contenedorProductos');
-    //let contenido = document.getElementsByTagName('p');
-    while (contenedor.firstChild){
-        contenedor.removeChild(contenedor.firstChild);
-    }
+    contenedor.innerHTML = "";
 }
 
 //Ordenar de acuerdo al selector
@@ -122,25 +115,32 @@ const filtrar = () =>{
 
 
 //   .:Carrito:.
-// agregar al array carrito los productos en los que se oprime agregar
-//capturar cual es el producto al que se le oprime agregar
-const cantidadAComprar = (id) =>{
-    let cantidad = document.getElementById(`num_${id}`).value;
-    return cantidad;
-}
-//console.log(cantidadAComprar(6));
-const cantidadDeProductosEnCarrito = (/*inputNumero*/) => {
-    elemento = document.getElementById('cantidadProductos');
-    let cantidadCarro = parseInt(elemento.innerHTML);
-    cantidadCarro = cantidadCarro + 1 /*inputNumero*/;
-    elemento.innerHTML = cantidadCarro;
-}
-//agregar productos al carrito
+const cantidadDeProductosEnCarrito = () => {
+    let mostrarEnSpan = document.getElementById('cantidadProductos');
+    let cantidadCarro = JSON.parse(localStorage.getItem('Carrito'));
+    mostrarEnSpan.innerHTML = cantidadCarro.length;
 
-const carrito = [];
+}
+//    agregar productos al carrito
+let carrito = JSON.parse(localStorage.getItem('Carrito'));
+
+const agregarProductoAlCarrito =(idProducto) => {
+    let productoComprado = productos.find(x => x.id == idProducto);
+    
+    if (!carrito){
+        carrito = [];
+    }
+    carrito.push(productoComprado);
+    console.log(carrito);
+    localStorage.setItem('Carrito', JSON.stringify(carrito));
+
+    cantidadDeProductosEnCarrito();
+}
+
+cantidadDeProductosEnCarrito();
 /*
-Comento para que no moleste
-alert('En las siguientes entradas, se te solicitara dos ingresos de productos para comprar, para ello debes usar los siguientes códigos plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso')
+<Comento para que no moleste>
+
 let producto1 = prompt('Introduce el primero de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
 let producto2 = prompt('Introduce el segundo de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
 
