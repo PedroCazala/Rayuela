@@ -1137,7 +1137,12 @@ input, select, textarea {
   color: #F15BB5; }
 
 .article__cantidad {
-  grid-area: cantidad; }
+  grid-area: cantidad;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .article__cantidad input {
+    width: 100px; }
 
 .article__precioUnitario {
   grid-area: precioUnitario; }

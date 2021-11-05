@@ -138,6 +138,8 @@ const agregarProductoAlCarrito =(idProducto) => {
 }
 
 cantidadDeProductosEnCarrito();
+
+
 /*
 <Comento para que no moleste>
 
