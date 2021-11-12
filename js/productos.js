@@ -22,31 +22,60 @@ const tijeramapedessentials13cm = new Productos (3,"Tijera maped essentials 13cm
 const lapizbicevolutionnegro = new Productos (4,"Lapiz bic evolution negro", 30, 10, "lapices", false, 25,'lapiz-negro-bic-evolution.jpg');
 const lapicerabictrazofino = new Productos (5,"Lapicera bic trazo fino", 67, 30, "lapicesras", ['azul', 'negro','rojo', 'verde'], false,'lapicera-bic-trazo-fino.jpg');
 const lapicerabictrazogrueso = new Productos(6,"Lapicera bic trazo grueso",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+const cuadernilloLedesmaAvon22x29x84h = new Productos(7,"Cuadernillo Ledesma Avon 22x29 x84h",140,20,"cuadernos",false,false,'cuadernilloLedesmaAvon22x29x84h.png');
+const lapicesdecolorFaberCastellx24 = new Productos(6,"Lapices de color Faber Castell x24",200,5,"lapices",false,false,'lapicesdecolorFaberCastellx24.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+// const lapicerabictrazogrueso = new Productos(6,"",58,20,"lapiceras",['azul', 'negro','rojo', 'verde'],false,'lapicera-bic-trazo-grueso.jpg');
+
 //Array productos
 const productos=[];
+
+const productosAMostrar = [];
+
+
 productos.push(plasticola40g);
 productos.push(voligoma30g);
 productos.push(tijeramapedessentials13cm);
 productos.push(lapizbicevolutionnegro);
 productos.push(lapicerabictrazofino);
 productos.push(lapicerabictrazogrueso);
+productos.push(cuadernilloLedesmaAvon22x29x84h);
+productos.push(lapicesdecolorFaberCastellx24);
+// IMPORTANTE: El siguiente for debe estar debajo de todos los push a productos, porque los lee y los ingresa a productosAMostrar
+for(let producto of productos){
+    productosAMostrar.push(producto);
+}
 
 let variedadProductos = productos.length;
 console.log('variedad de productos disponibles: ' + variedadProductos);
 
-//funciones para ordenar
+//-----funciones para ordenar-----
 function ordenDeMenor(){
-    productos.sort((a, b) => {
+    productosAMostrar.sort((a, b) => {
         return a.precio-b.precio
     });
 }
 function ordenDeMayor(){
-    productos.sort((a, b) => {
+    productosAMostrar.sort((a, b) => {
         return b.precio-a.precio
     });
 }
 function ordenAlfabeticamente(){
-    productos.sort((a, b) => {
+    productosAMostrar.sort((a, b) => {
         if(a.nombre > b.nombre){
             return 1;
         }else if(a.nombre < b.nombre){
@@ -60,8 +89,9 @@ function ordenAlfabeticamente(){
 ordenAlfabeticamente();
 //Crear catalogo basandonos en el array 'productos'
 function mostrarProductos(){
-    for(const producto of productos){
-        let contenedor = 
+    let contenedor = $('#contenedorProductos')
+    for(const producto of productosAMostrar){
+        let contenido = 
         `<div class="producto" id='${producto.id}'>
             <img id="imgProducto" src="../images/productos/${producto.img}" alt="${producto.nombre}">
             <h3 class="tituloProducto">${producto.nombre}</h3>
@@ -73,7 +103,7 @@ function mostrarProductos(){
             </form>
         </div>
         `
-        $('#contenedorProductos').append(contenedor);
+        contenedor.append(contenido);
     }
 }
 mostrarProductos();
@@ -101,17 +131,32 @@ function ordenarProductos(){
         ordenDeMayor();
         mostrarProductos();
     }
-
-}
-orden.addEventListener("change", ordenarProductos);
-
-//Filtrar
-const filtrar = () =>{
-    let buscador = document.getElementById('buscador');
-    buscador.onkeyup = () =>{console.log(buscador.value);}
 }
 
+if (!orden){console.log('no hay orden');}
+else{
+    orden.addEventListener("change", ordenarProductos);
+}
+// Filtrar
+let buscador =  $('#buscador');
 
+
+const filtrar = () => {
+    texto = buscador.val().toLowerCase();
+
+    productosAMostrar.splice(0);
+    for(const producto of productos){
+        let nombre = producto.nombre.toLowerCase();
+        if(nombre.indexOf(texto) !== -1){
+            
+            productosAMostrar.push(producto);
+        }
+    }
+    console.log(productosAMostrar);
+}
+buscador.keyup(filtrar);
+buscador.keyup(ocultarProductos);
+buscador.keyup(mostrarProductos);
 
 
 //   .:Carrito:.
@@ -126,42 +171,23 @@ let carrito = JSON.parse(localStorage.getItem('Carrito'));
 
 const agregarProductoAlCarrito =(idProducto) => {
     let productoComprado = productos.find(x => x.id == idProducto);
-    
+    let cantidad = $('#num_'+idProducto).val();
+
     if (!carrito){
         carrito = [];
     }
+    for (let i = 1; i <= cantidad; i++) {
     carrito.push(productoComprado);
-    console.log(carrito);
+    }
     localStorage.setItem('Carrito', JSON.stringify(carrito));
 
     cantidadDeProductosEnCarrito();
 }
 
 cantidadDeProductosEnCarrito();
+let array =[];
+for (let i = 1; i <= 2; i++) {
+    array.push('banana')
+}
 
-
-/*
-<Comento para que no moleste>
-
-let producto1 = prompt('Introduce el primero de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
-let producto2 = prompt('Introduce el segundo de dos productos a comprar, recuerda que las opciones son: plasticola40g - voligoma30g - tijeramapedessentials13cm - lapizbicevolutionnegro - lapicerabictrazofino - lapicerabictrazogrueso');
-
-if(producto1 == "plasticola40g"){producto1 = Object.assign({},plasticola40g);}
-if(producto1 == "voligoma30g"){producto1 = Object.assign({},voligoma30g);}
-if(producto1 == "tijeramapedessentials13cm"){producto1 = Object.assign({},tijeramapedessentials13cm);}
-if(producto1 == "lapizbicevolutionnegro"){producto1 = Object.assign({},lapizbicevolutionnegro);}
-if(producto1 == "lapicerabictrazofino"){producto1 = Object.assign({},lapicerabictrazofino);}
-if(producto1 == "lapicerabictrazogrueso"){producto1 = Object.assign({},lapicerabictrazogrueso);}
-
-if(producto2 == "plasticola40g"){producto2 = Object.assign({},plasticola40g);}
-if(producto2 == "voligoma30g"){producto2 = Object.assign({},voligoma30g);}
-if(producto2 == "tijeramapedessentials13cm"){producto2 = Object.assign({},tijeramapedessentials13cm);}
-if(producto2 == "lapizbicevolutionnegro"){producto2 = Object.assign({},lapizbicevolutionnegro);}
-if(producto2 == "lapicerabictrazofino"){producto2 = Object.assign({},lapicerabictrazofino);}
-if(producto2 == "lapicerabictrazogrueso"){producto2 = Object.assign({},lapicerabictrazogrueso);}
-
-console.log('El primer producto que compraste es: ' + producto1.nombre + ', el precio es de: $' + producto1.precio);
-console.log('El segundo producto que compraste es: ' + producto2.nombre + ', el precio es de: $' + producto2.precio);
-
-console.log('El total a pagar, sin descuentos incluidos es de: ' + (producto1.precio+producto2.precio));
-*/
+console.log(array);

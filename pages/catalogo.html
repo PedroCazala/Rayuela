@@ -19,7 +19,7 @@
         <header>
             <a href="../index.html" class="logo"><img src="../images/Logo_3D_1920x1080p.png" alt="Logo" class="logoImg"></a>
         
-            <input type="search" placeholder="¿Qué estas buscando?" class="buscador">
+            <input type="search" placeholder="¿Qué estas buscando?" class="buscador" id="buscador">
             <nav class="navegacion">
                 <ul class="menu">
                     <li><a href="ofertas.html">Ofertas</a>
@@ -77,7 +77,7 @@
             <section class="contenedorUs">
                 <a href="../pages/usuario.html" class="user"><img src="../images/userBlanco.svg" alt="Usuario" class=userCarro></a>
                 <!--quizas hacer un html para FAVORITOS capaz seria bueno ponerle un menu desplegable-->
-                <a href="../pages/carrito.html" class="carrito"><img src="../images/carritoBlanco.svg" alt="Carrito" class=userCarro></a>
+                <a href="../pages/carrito.html" class="carrito"><img src="../images/carritoBlanco.svg" alt="Carrito" class=userCarro><span class="cantidadCarrito" id="cantidadProductos">0</span></a>
             </section>
             <div class="tresLineas" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><img src="../images/menuBlanco.svg" alt="menu"></div>
             <div class="collapse menuOculto ubicacionMenu" id="collapseExample">
@@ -189,77 +189,17 @@
 
         <main ><!-- Acá se muestran los productos de las categorias o subcategorias que fueron selectionados en la sección anterior -->
             <h1>Catálogo</h1>
-            <div class="content">
-                <div class="producto">
-                    <img src="../images/productos/plasticola40.jpg" alt="Plasticola 40g">
-                    <h3 class="tituloProducto">Plasticola 40g</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
-                <div class="producto">
-                    <img src="../images/productos/voligoma30.jpg" alt="Voligoma 30g">
-                    <h3 class="tituloProducto">Voligoma 30g</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
-                <div class="producto">
-                    <img src="../images/productos/tijera maped essentials 13cm.jpg" alt="Tijera maped essentials 13cm">
-                    <h3 class="tituloProducto">Tijera maped essentials 13cm</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
-                <div class="producto">
-                    <img src="../images/productos/lapiz-negro-bic-evolution.jpg" alt="Lapiz bic evolution negro">
-                    <h3 class="tituloProducto">Lapiz bic evolution negro</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
-                <div class="producto">
-                    <img src="../images/productos/lapicera-bic-trazo-fino.jpg" alt="Lapicera bic trazo fino">
-                    <h3 class="tituloProducto">Lapicera bic trazo fino</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
-                <div class="producto">
-                    <img src="../images/productos/lapicera-bic-trazo-grueso.jpg" alt="Lapicera bic trazo grueso">
-                    <h3 class="tituloProducto">Lapicera bic trazo grueso</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
-                <div class="producto">
-                    <img src="../images/productos/cuadernillo-avon.png" alt="Cuadernillo Ledesma Avon 22x29 x84h">
-                    <h3 class="tituloProducto">Cuadernillo Ledesma Avon 22x29 x84h</h3>
-                    <p>$precio</p>
-                    <p>Cantidad</p>
-                    <form action="">
-                        <input type="number" class="cantidad" min="1" max="100" value="1">
-                        <input type="submit" value="Agregar" class="botonProducto">
-                    </form>
-                </div>
+            <div class="ordenar">
+                <label for="orden">Ordenar por:</label>
+                <select id="orden">
+                    <option value="az">A a la Z</option>
+                    <option value="menor$">Menor precio</option>
+                    <option value="mayor$">Mayor precio</option>
+                </select>
+            </div>
+            <div id="contenedorProductos" class="content">
+            </div>
+            <p>-----------------------------------------------------</p>
                 <div class="producto">
                     <img src="../images/productos/lapiz-color-faber-24.jpg" alt="Lapices de color Faber Castell x24">
                     <h3 class="tituloProducto">Lapices de color Faber Castell x24</h3>
@@ -472,5 +412,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../js/productos.js"></script></body>
 </html>

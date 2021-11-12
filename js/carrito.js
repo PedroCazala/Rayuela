@@ -1,6 +1,5 @@
 const verCarrito = () =>{
     let contenedor = $('#contenedorCarrito');
-    let carrito = JSON.parse(localStorage.getItem('Carrito'));
     for(const producto of carrito)
     contenedor.append(
         `<article>
@@ -10,13 +9,13 @@ const verCarrito = () =>{
                 <input type="number" class="cantidad" min="1" max="100" value="1">
                 <a class="botonProducto" onclick="borrarDeCarrito(${producto.id})">Borrar producto</a>
             </div>
-            <div class="article__precioUnitario">${producto.precio}</div>
+            <div class="article__precioUnitario">$${producto.precio}</div>
             <div class="article__precio">Total: Ver</div>
         </article>`)
 }
 verCarrito();
 
-let carrito = JSON.parse(localStorage.getItem('Carrito'));
+//Viendo
 const borrarDeCarrito = (id) =>{
     for (const producto of carrito){
         if(carrito.find(elemento => elemento.id == id)){
