@@ -1170,13 +1170,13 @@ input, select, textarea {
   .crearCuenta label, .crearCuenta form label {
     text-align: center; }
 
-.crearCuenta input, .crearCuenta button {
+.crearCuenta input, .crearCuenta button, .crearCuenta select {
   margin: auto;
   margin-bottom: 15px;
   padding: 8px;
   border-radius: 15px; }
 
-.crearCuenta input {
+.crearCuenta input, .crearCuenta select {
   width: 700px;
   max-width: 100%; }
 

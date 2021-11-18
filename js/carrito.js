@@ -11,7 +11,8 @@ const verCarrito = () =>{
             </div>
             <div class="article__precioUnitario">$${producto.precio}</div>
             <div class="article__precio">Total: Ver</div>
-        </article>`)
+        </article>`
+    )
 }
 verCarrito();
 

@@ -103,6 +103,16 @@
             <input type="text" id="apellidoUsuario">
             <label for="emailUsuario">Email</label>
             <input type="email" id="emailUsuario">
+            <label for="provincia">Provincia</label>
+            <select name="provincia" id="provincia">
+                <option disabled selected>--Elije una opción--</option>
+                <!-- Se mostraran las provincias desde una appi -->
+            </select>
+            <label for="municipio">Municipio</label>
+            <select name="municipio" id="municipio">
+                <option disabled selected value="porDefecto">--Elije una opción--</option>
+                <!-- Se mostraran los municipios desde una appi, según la provincia elegida -->
+            </select>
             <label for="contraseñaUsuario">Contraseña</label>
             <input type="password" id="contraseñaUsuario">
             <label for="confirmarContraseñaUsuario">Confirmar contraseña</label>
@@ -152,6 +162,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../js/apis.js"></script>
 </body>
 </html>

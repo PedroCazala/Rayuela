@@ -11,13 +11,13 @@
 }
 
 .crearCuenta{
-    input, button{
+    input, button,select{
         margin: auto;
         margin-bottom: 15px;
         padding: 8px;
         border-radius: 15px;
     }
-    input{
+    input,select{
         width: 700px;
         max-width: 100%;
     }
