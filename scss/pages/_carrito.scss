@@ -75,11 +75,32 @@
                 max-height: 160px;
             }
         }
-        p{
-            margin-right: 40px;
-        }
+        // p{
+        //     margin-right: 40px;
+        // }
     }
 }
 
+#pieDeCarrito{
+    display:flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+    p{
+        padding: 6px;
+        margin: auto;
+    }
+}
+.vaciarCarrito{
+    color:gray;
+    border-radius: 15px;
+    margin:auto;
+    padding:6px;
+    text-align:end;
+
+    &:hover{
+        color:white;
+        background-color: gray;
+    }
+}
 
 

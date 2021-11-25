@@ -1,3 +1,4 @@
+//Por ahora solo fue una prueba para que el usuario pueda ingresar o registrarse
 $(document).ready(fuction= () =>{
     $('header').css({
     });

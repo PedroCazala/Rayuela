@@ -10,6 +10,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   width: 100%;
+  min-height: 100vh;
   /*Flex*/
   display: flex;
   flex-flow: column; }
@@ -205,7 +206,8 @@ footer {
   display: flex;
   flex-flow: row  wrap;
   justify-content: space-between;
-  padding: 0 10px; }
+  padding: 0 10px;
+  width: 100%; }
   footer div {
     display: flex;
     justify-content: center;
@@ -1157,9 +1159,25 @@ input, select, textarea {
     grid-template-areas: "nombre nombre cantidad" "foto foto cantidad" "foto foto precioUnitario" "foto foto precio"; }
     .carritoPag article img {
       max-width: 160px;
-      max-height: 160px; }
-  .carritoPag p {
-    margin-right: 40px; } }
+      max-height: 160px; } }
+
+#pieDeCarrito {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-end; }
+  #pieDeCarrito p {
+    padding: 6px;
+    margin: auto; }
+
+.vaciarCarrito {
+  color: gray;
+  border-radius: 15px;
+  margin: auto;
+  padding: 6px;
+  text-align: end; }
+  .vaciarCarrito:hover {
+    color: white;
+    background-color: gray; }
 
 /*-------------------------- Usuario ---------------------------*/
 .crearCuenta, .crearCuenta form {
