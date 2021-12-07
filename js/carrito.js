@@ -6,27 +6,34 @@ const verCarrito = () =>{
         `<article>
             <div class="article__foto"><img src="../images/productos/${producto.img}" alt="${producto.nombre}"></div>
             <div class="article__nombre">${producto.nombre}</div>
-            <div class="article__cantidad"><p>Cantidad</p> 
-                <input type="number" class="cantidad" id="cantidad_${producto.id}" min="1" max="100" value="${producto.cantidad}">
-                <a class="botonProducto" onclick="sumar(${producto.id})">+</a>
-                <a class="botonProducto" onclick="restar(${producto.id})" >-</a>
+            <div class="article__cantidad">
+                <p>Cantidad</p> 
+                <div class="cant">
+                    <a class="botonProducto menos" onclick="restar(${producto.id})" >-</a>
+                    <input type="number" class="cantidad numero" id="cantidad_${producto.id}" min="1" max="100" value="${producto.cantidad}">
+                    <a class="botonProducto mas" onclick="sumar(${producto.id})">+</a>
+                </div>
             </div>
             <div class="article__precioUnitario">$${producto.precio}</div>
-            <div class="article__precio">Total: $${producto.cantidad*producto.precio}</div>
-            <a class="botonProducto" onclick="borrarDeCarrito(${producto.id})">Borrar producto</a>
+            <div class="article__precioYBorraProducto">
+                <p> </p>
+                <div>Total: $${producto.cantidad*producto.precio}</div>
+                <a class="botonProducto borrarProducto" onclick="borrarDeCarrito(${producto.id})">Borrar producto</a>
+            </div>
         </article>`
     )}
 }
 verCarrito();
-
-//Vaciar carro
-$('.vaciarCarrito').click(() =>{
-    carrito = [];
-    //carritoAMostrar = [];
+actualizar=()=>{
     actualizarCarritoEnLocalStorage();
     cantidadDeProductosEnCarrito();
     verCarrito();
-    // console.log('entro a vaciar carrito')
+    totalCarrito();
+}
+//Vaciar carro
+$('.vaciarCarrito').click(() =>{
+    carrito = [];
+    actualizar();
 }
 
 )
@@ -35,12 +42,11 @@ $('.vaciarCarrito').click(() =>{
 const sumar = (idProducto) => {
     let cantidad = parseInt($(`#cantidad_${idProducto}`).val())+1;
     for(const producto of carrito){
-            if(producto.id === idProducto){
-                producto.cantidad = cantidad; 
-            }
+        if(producto.id === idProducto){
+            producto.cantidad = cantidad; 
         }
-    actualizarCarritoEnLocalStorage();
-    verCarrito();
+    }
+    actualizar();
 }
 
 const restar = (idProducto) => {
@@ -54,8 +60,7 @@ const restar = (idProducto) => {
             }
         }
     }
-    actualizarCarritoEnLocalStorage();
-    verCarrito();
+    actualizar();
 }
 
 const borrarDeCarrito = (idProducto) =>{
@@ -64,14 +69,16 @@ const borrarDeCarrito = (idProducto) =>{
             console.log(producto)
             carrito.splice(carrito.indexOf(producto),1)
         }
-        // if(item){
-        //     //console.log('borrar, ',producto.nombre);
-        //     console.log(carrito.indexOf(item))
-            
-        // }
     }
-    actualizarCarritoEnLocalStorage();
-    cantidadDeProductosEnCarrito();
-    verCarrito();
+    actualizar();
 }
-//borrarDeCarrito();
+//Total carrito
+const totalCarrito =()=>{
+    let total = $('#totalCarrito');
+    let suma=0;
+    carrito.forEach(producto => {
+        suma += parseInt(producto.precio * producto.cantidad)
+    });
+    total.html('$'+suma);
+}
+totalCarrito();

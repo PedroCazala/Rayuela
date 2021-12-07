@@ -1108,16 +1108,14 @@ input, select, textarea {
   margin: auto; }
   .carritoPag__table img {
     max-width: 270px;
-    height: 270px;
+    max-height: 270px;
     object-fit: contain; }
 
 .carritoPag article {
   border: 2px #F15BB5 solid;
-  border-radius: 10px; }
-
-.carritoPag article {
+  border-radius: 10px;
   display: grid;
-  grid-template-areas: "nombre nombre cantidad precioUnitario precio" "foto foto cantidad precioUnitario precio";
+  grid-template-areas: "nombre nombre cantidad precioUnitario precioYBorraProducto" "foto foto cantidad precioUnitario precioYBorraProducto";
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
@@ -1144,22 +1142,55 @@ input, select, textarea {
   flex-direction: column;
   align-items: center; }
   .article__cantidad input {
-    width: 100px; }
+    max-width: 100px;
+    text-align: center; }
+  .article__cantidad .cant {
+    display: grid; }
+    .article__cantidad .cant .menos {
+      grid-area: menos; }
+    .article__cantidad .cant .numero {
+      grid-area: number; }
+    .article__cantidad .cant .mas {
+      grid-area: mas; }
 
 .article__precioUnitario {
   grid-area: precioUnitario; }
 
-.article__precio {
-  grid-area: precio; }
+.article__precioYBorraProducto {
+  grid-area: precioYBorraProducto;
+  display: flex;
+  flex-flow: column wrap;
+  height: 90%;
+  justify-content: space-between; }
+  .article__precioYBorraProducto .borrarProducto {
+    grid-area: 'borrarProducto';
+    max-width: 100%; }
+
+@media only screen and (min-width: 1023px) {
+  .carritoPag article {
+    grid-template-areas: "nombre nombre cantidad precioUnitario precioYBorraProducto" "foto foto cantidad precioUnitario precioYBorraProducto"; }
+  .carritoPag .cant {
+    grid-template-areas: 'menos number mas'; } }
 
 @media only screen and (max-width: 1023px) {
   .carritoPag article {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-areas: "nombre nombre cantidad" "foto foto cantidad" "foto foto precioUnitario" "foto foto precio"; }
+    grid-template-areas: "nombre nombre cantidad" "foto foto cantidad" "foto foto precioUnitario" "foto foto precioYBorraProducto"; }
     .carritoPag article img {
       max-width: 160px;
-      max-height: 160px; } }
+      max-height: 160px; }
+  .carritoPag .article__precioYBorraProducto {
+    flex-direction: row;
+    max-width: 100%;
+    margin: 15px;
+    padding: 2px;
+    font-size: 1.7rem; }
+    .carritoPag .article__precioYBorraProducto p {
+      display: none; }
+  .cant {
+    grid-template-rows: auto auto;
+    grid-template-areas: 'number number' 'menos mas'; } }
 
 #pieDeCarrito {
   display: flex;
@@ -1313,12 +1344,22 @@ aside .aquiEstoy:hover {
 .catalogo {
   min-height: 100%; }
 
-/*
-.footer{
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  min-width: 100%; }
+  .container main {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    bottom: 0;
-    position: relative;
-}
+    margin-top: 0; }
+    .container main h1 {
+      width: 100%; }
+
+/*
 .body{
     position:absolute;
     width: 100%;

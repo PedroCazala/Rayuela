@@ -4,7 +4,7 @@
     margin: auto;
     &__table img{
         max-width: 270px;
-        height: 270px;
+        max-height: 270px;
         object-fit: contain;
     }
 }
@@ -13,14 +13,10 @@
     article{
         border: 2px $color1 solid;
         border-radius: 10px;
-    }
-}
-.carritoPag{
-    article{
         display: grid;
         grid-template-areas: 
-        "nombre nombre cantidad precioUnitario precio"
-        "foto foto cantidad precioUnitario precio"
+        "nombre nombre cantidad precioUnitario precioYBorraProducto"
+        "foto foto cantidad precioUnitario precioYBorraProducto"
         ;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         justify-items: center;
@@ -50,14 +46,50 @@
     flex-direction: column;
     align-items: center;
     input{
-        width: 100px;
+        max-width: 100px;
+        text-align:center;
     }
+    .cant{
+        display: grid;
+        .menos{
+            grid-area: menos;
+        }
+        .numero{
+            grid-area: number;
+        }
+        .mas{
+            grid-area: mas;
+        }
+    }
+    
 }
 .article__precioUnitario{
     grid-area: precioUnitario;
 }
-.article__precio{
-    grid-area: precio;
+.article__precioYBorraProducto{
+    grid-area: precioYBorraProducto;
+    display:flex;
+    flex-flow: column wrap;
+    height: 90%;
+    justify-content: space-between;
+    .borrarProducto{
+        grid-area:'borrarProducto';
+        max-width: 100%;
+
+    }
+}
+@media only screen and (min-width: 1023px){
+    .carritoPag{
+        article{
+            grid-template-areas: 
+            "nombre nombre cantidad precioUnitario precioYBorraProducto"
+            "foto foto cantidad precioUnitario precioYBorraProducto"
+            ;
+        }
+        .cant{
+            grid-template-areas: 'menos number mas';
+        }
+    }
 }
 @media only screen and (max-width: 1023px){
     .carritoPag{
@@ -68,16 +100,29 @@
             "nombre nombre cantidad"
             "foto foto cantidad"
             "foto foto precioUnitario"
-            "foto foto precio"
-            ;
+            "foto foto precioYBorraProducto";
             img{
                 max-width: 160px;
                 max-height: 160px;
             }
         }
-        // p{
-        //     margin-right: 40px;
-        // }
+        .article__precioYBorraProducto{
+            p{
+                display: none;
+            }
+            flex-direction:row;
+            max-width: 100%;
+            margin: 15px;
+            // margin-bottom: 15px;
+            padding: 2px;
+            font-size: 1.7rem;
+        }
+    }
+    .cant{
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        'number number'
+        'menos mas';
     }
 }
 
