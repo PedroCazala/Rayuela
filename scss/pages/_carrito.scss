@@ -51,14 +51,17 @@
     }
     .cant{
         display: grid;
+        max-width: 95%;
         .menos{
             grid-area: menos;
+            margin: 0 5px;
         }
         .numero{
             grid-area: number;
         }
         .mas{
             grid-area: mas;
+            margin: 0 5px;
         }
     }
     
@@ -75,7 +78,7 @@
     .borrarProducto{
         grid-area:'borrarProducto';
         max-width: 100%;
-
+        padding: 2px 10px;
     }
 }
 @media only screen and (min-width: 1023px){
@@ -123,6 +126,17 @@
         grid-template-areas: 
         'number number'
         'menos mas';
+        .numero{
+            margin-bottom: 5px;
+        }
+        .menos{
+            padding: 2px 5px;
+            width: 37px;
+        }
+        .mas{
+            padding: 2px 5px;
+            width: 37px;
+        }
     }
 }
 

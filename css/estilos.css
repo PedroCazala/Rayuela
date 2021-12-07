@@ -1145,13 +1145,16 @@ input, select, textarea {
     max-width: 100px;
     text-align: center; }
   .article__cantidad .cant {
-    display: grid; }
+    display: grid;
+    max-width: 95%; }
     .article__cantidad .cant .menos {
-      grid-area: menos; }
+      grid-area: menos;
+      margin: 0 5px; }
     .article__cantidad .cant .numero {
       grid-area: number; }
     .article__cantidad .cant .mas {
-      grid-area: mas; }
+      grid-area: mas;
+      margin: 0 5px; }
 
 .article__precioUnitario {
   grid-area: precioUnitario; }
@@ -1164,7 +1167,8 @@ input, select, textarea {
   justify-content: space-between; }
   .article__precioYBorraProducto .borrarProducto {
     grid-area: 'borrarProducto';
-    max-width: 100%; }
+    max-width: 100%;
+    padding: 2px 10px; }
 
 @media only screen and (min-width: 1023px) {
   .carritoPag article {
@@ -1190,7 +1194,15 @@ input, select, textarea {
       display: none; }
   .cant {
     grid-template-rows: auto auto;
-    grid-template-areas: 'number number' 'menos mas'; } }
+    grid-template-areas: 'number number' 'menos mas'; }
+    .cant .numero {
+      margin-bottom: 5px; }
+    .cant .menos {
+      padding: 2px 5px;
+      width: 37px; }
+    .cant .mas {
+      padding: 2px 5px;
+      width: 37px; } }
 
 #pieDeCarrito {
   display: flex;
